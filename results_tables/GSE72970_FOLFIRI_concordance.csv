@@ -1,0 +1,9 @@
+"Gene","GSE39582_logFC","GSE39582_Direction","Validation_Mean_R","Validation_Mean_S","Validation_logFC","Validation_Direction","Concordant","SHAP_Weight"
+"CSNK1G2",-0.2059,"down",8.1837,8.1896,-0.0059,"down",TRUE,0.9316
+"KAZN",0.364,"up",6.4805,6.4852,-0.0047,"down",FALSE,0.2799
+"KLK6",0.9167,"up",6.6157,6.9962,-0.3805,"down",FALSE,0.4263
+"MGA",0.2778,"up",6.0695,6.0765,-0.007,"down",FALSE,0.2702
+"MID2",0.3493,"up",6.2724,6.4096,-0.1372,"down",FALSE,0.2792
+"SOX11",0.2143,"up",4.6833,4.8019,-0.1186,"down",FALSE,0.321
+"TAS2R40",-0.0809,"down",3.451,3.4285,0.0225,"up",FALSE,0.2276
+"ZNF451",0.363,"up",6.686,6.7711,-0.0851,"down",FALSE,0.5849

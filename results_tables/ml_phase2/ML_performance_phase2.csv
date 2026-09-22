@@ -1,0 +1,2 @@
+"Phase","Model","FingerprintGenes","CV_AUC","Test_AUC","Test_Accuracy","Test_Sensitivity","Test_Specificity","TCGA_Validation_AUC"
+"Phase2","XGBoost_Fingerprint",10,"0.8986","0.8883","83.7%","75.0%","87.9%","0.5375"

@@ -1,0 +1,36 @@
+"Tier","Pathway","p.adjust","Count"
+"All","Focal adhesion",1.0204704675294e-08,57
+"All","Integrin signaling",1.35777819599308e-07,45
+"All","Cytoskeleton in muscle cells",1.35777819599308e-07,59
+"All","AGE-RAGE signaling pathway in diabetic complications",6.7307864117533e-07,33
+"All","IgSF CAM signaling",1.38337904634679e-06,67
+"Tier2_DEG_WGCNA","Cytoskeleton in muscle cells",2.29250349164865e-15,35
+"Tier2_DEG_WGCNA","Integrin signaling",3.00325666423003e-08,21
+"Tier2_DEG_WGCNA","Focal adhesion",3.00325666423003e-08,24
+"Tier2_DEG_WGCNA","AGE-RAGE signaling pathway in diabetic complications",3.13559729442757e-07,16
+"Tier2_DEG_WGCNA","Complement and coagulation cascades",3.13559729442757e-07,15
+"Tier3_DEG_Metab","Antifolate resistance",1.85322517624833e-11,7
+"Tier3_DEG_Metab","Folate transport and metabolism",1.85322517624833e-11,7
+"Tier3_DEG_Metab","One carbon pool by folate",0.00011464050969957,4
+"Tier3_DEG_Metab","Pyrimidine metabolism",0.000463714873907545,4
+"Tier3_DEG_Metab","Platinum drug resistance",0.000970576868400448,4
+"Tier4_MultiDEG","Autophagy - animal",0.000176152891559604,35
+"Tier4_MultiDEG","Parathyroid hormone synthesis, secretion and action",0.00154953963841501,25
+"Tier4_MultiDEG","ErbB signaling pathway",0.00288679265585353,20
+"Tier4_MultiDEG","Focal adhesion",0.016141759984265,33
+"Tier4_MultiDEG","GnRH signaling pathway",0.016141759984265,19
+"Tier5_WGCNA_Hub","Staphylococcus aureus infection",0.0332818237252887,3
+"Tier5_WGCNA_Hub","Asthma",0.0480924225986929,2
+"Tier5_WGCNA_Hub","Herpes simplex virus 1 infection",0.0480924225986929,3
+"Tier5_WGCNA_Hub","Allograft rejection",0.0480924225986929,2
+"Tier5_WGCNA_Hub","Type I diabetes mellitus",0.0480924225986929,2
+"HighPriority","Cytoskeleton in muscle cells",8.45111314246828e-14,35
+"HighPriority","Integrin signaling",5.58216738838213e-08,22
+"HighPriority","Cell adhesion molecule (CAM) interaction",7.88636141218344e-08,22
+"HighPriority","Focal adhesion",2.21203355677946e-07,24
+"HighPriority","AGE-RAGE signaling pathway in diabetic complications",1.10611382486312e-06,16
+"Tier1_2","Cytoskeleton in muscle cells",3.26686686046904e-16,36
+"Tier1_2","Integrin signaling",3.27785213470876e-08,21
+"Tier1_2","Focal adhesion",3.27785213470876e-08,24
+"Tier1_2","AGE-RAGE signaling pathway in diabetic complications",3.32168634724584e-07,16
+"Tier1_2","Complement and coagulation cascades",3.32168634724584e-07,15

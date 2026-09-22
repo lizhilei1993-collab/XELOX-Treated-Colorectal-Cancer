@@ -1,0 +1,3 @@
+"Model","Features","C_index"
+"Pathway-level Nomogram (8 variables)",8,0.676
+"Gene-level AIC Cox",23,0.834237313321941

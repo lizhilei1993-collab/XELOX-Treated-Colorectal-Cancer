@@ -1,0 +1,26 @@
+=== per-cohort limma table: scale sanity ===
+GSE39582   n=54675  |logFC| med=0.048     pctl99=0.35      max=1.0        | p med=0.4038   min=1.47e-06 | probes that look like ST arrays=0
+           sample probe ids: 0.424842490047193, 0.483438048921773, -0.346929412611276, 0.36467294855271, 0.645403187163963
+GSE104645  n=41093  |logFC| med=0.103     pctl99=0.46      max=1.0        | p med=0.6074   min=3.74e-05 | probes that look like ST arrays=0
+           sample probe ids: 0.876503339740218, 0.726565970873038, -0.659854978947118, -0.717194909773778, -0.568875620402756
+GSE28702   n=54675  |logFC| med=3.418     pctl99=242.34    max=3106.8     | p med=0.4079   min=6.27e-07 | probes that look like ST arrays=0
+           sample probe ids: 216.177007839161, -2.21701867183018, 40.0323376344402, -123.826648668262, 30.128322028882
+GSE72970   n=54675  |logFC| med=0.101     pctl99=0.56      max=1.5        | p med=0.4632   min=0.000142 | probes that look like ST arrays=0
+           sample probe ids: -1.27688748889681, -1.08215602576029, 0.372423431672834, -0.373081587952071, 0.563051817138514
+GSE69657   n=54675  |logFC| med=5.850     pctl99=670.79    max=3905.8     | p med=0.4745   min=0.000146 | probes that look like ST arrays=0
+           sample probe ids: 974.201473604826, -5.83735671191553, -18.8744057315234, -6.56688763197587, 384.898395927602
+
+=== Supplementary Table S1 sheet 1 (deg_meta_filtered) ===
+genes listed = 10618 ; columns = 27
+cells with |logFC| > 5, by cohort: {'GSE69657': 3413, 'GSE28702': 2893}
+distinct genes affected: 3895 of 10618 (36.7%)
+  pval_GSE104645         n=4615   median=0.4894  min=3.74e-05  max=0.9999  n>1=0
+  pval_GSE28702          n=4615   median=0.1206  min=6.27e-07  max=0.9975  n>1=0
+  pval_GSE72970          n=4615   median=0.1645  min=0.000167  max=0.9992  n>1=0
+  pval_GSE69657          n=4615   median=0.2753  min=0.000211  max=0.9993  n>1=0
+  pval_GSE39582          n=4615   median=0.0957  min=1.47e-06  max=0.9970  n>1=0
+  logfc_GSE104645        |logFC| median=0.14    p90=0.3       max=0.9         n>5=0/4615
+  logfc_GSE28702         |logFC| median=9.27    p90=71.1      max=1309.4      n>5=2893/4615
+  logfc_GSE72970         |logFC| median=0.21    p90=0.4       max=1.3         n>5=0/4615
+  logfc_GSE69657         |logFC| median=15.34   p90=182.1     max=3905.8      n>5=3413/4615
+  logfc_GSE39582         |logFC| median=0.11    p90=0.2       max=0.9         n>5=0/4615

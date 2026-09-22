@@ -1,2 +1,156 @@
-# XELOX-Treated-Colorectal-Cancer
-Pathway-Level Profiling Reduces Overfitting in Chemoresistance Modeling for XELOX-Treated Colorectal Cancer
+# Reproduction code — *Pathway-Level Profiling Reduces Model Optimism in Chemoresistance Modeling for Colorectal Cancer Treated with Fluoropyrimidine-Based Adjuvant Chemotherapy: A Nested Cross-Validation Benchmark*
+
+This repository holds the analysis code and the derived result tables for the
+manuscript. It is deliberately **not** a data repository: all expression input is
+public and is re-downloaded by the scripts named below.
+
+## Status of deposit
+
+This code is being released alongside a manuscript under review. The repository
+is public, so the caveats below are part of the release, not internal notes.
+
+## KNOWN ISSUES
+
+### 1. Two of five cohorts were analysed on a linear expression scale
+
+`scripts/03_deg_analysis.R` contains the assertion
+
+```r
+# Microarray data is already log2-transformed (range ~4-16)
+```
+
+and applies no check. That is true for GSE39582, GSE104645 and GSE72970 and
+**false for GSE28702 and GSE69657**, whose stored matrices have maxima of
+405,930 and 26,153 respectively (measured 2026-09-22 on the deposited objects;
+see `verify/scale_check.txt`). limma therefore fitted a linear-scale design for
+those two cohorts, and the stored tables carry `AveExpr` of 574 and 1794 versus
+6.5 and 8.0 for the log2 cohorts, with |log2FC| reaching 3,106 and 3,905.
+
+Consequences, in order of severity:
+
+* The `logFC` values for GSE28702 and GSE69657 are not interpretable as fold changes.
+* The **p-values and directions** for those two cohorts come from a test on an
+  untransformed, heteroscedastic scale dominated by the most abundant
+  transcripts, so they are not comparable to the other three cohorts.
+* The five-cohort Stouffer meta-analysis therefore does **not** currently have a
+  defensible basis; the gene count reported in the manuscript is being
+  recomputed on a corrected scale.
+* Within 36.7% of genes (3,895/10,618) in the meta-analysis table, at least one
+  cohort contributes an |logFC| above 5.
+
+### 2. The meta-analysis statistic reproduces, but its generating script is absent
+
+`results_tables/meta_analysis/deg_meta_results.csv` (Supplementary Table S1) is
+the five-cohort Stouffer output, but the only meta-analysis code in this
+repository is Fisher's method in `scripts/03_deg_analysis.R`, writing a
+different file. The Stouffer statistic itself is recoverable: re-deriving it from
+the stored per-cohort p-values, with weights `sqrt(n_cohort)` and the sign taken
+from `logFC`, reproduces the recorded values (LDLRAD4 z = -5.45 against a
+recorded -5.446; WIPI2 -4.74 against -4.741) and yields 286 genes at
+BH FDR < 0.05, of which 243 (85%) appear in the published table.
+
+What is **not** recoverable is the input path. That reconstruction consumes the
+`DEG_<cohort>_mapped.csv` tables; run instead through the pipeline in
+`scripts/03_deg_analysis.R` as committed, the same five-cohort meta-analysis
+yields single-digit gene counts. The difference is the probe filter described in
+item 5, which the published tables evidently did not use. So treat
+`meta_analysis/deg_meta_*` as **a result whose arithmetic is reproducible and
+whose preparation is not**.
+
+### 3. The per-probe DEG tables lost their identifier column
+
+`results_tables/DEG_<cohort>_limma.csv` begin at `logFC`; the probe ID was
+dropped when the tables were written (`write.csv(..., row.names = FALSE)`), so
+individual rows cannot be traced back to a probe. A `Gene` column is present but,
+because `scripts/03_deg_analysis.R` sets `res$Gene <- rownames(res)` on a
+probe-indexed fit, it holds probe identifiers rather than symbols; the symbols
+live in a separate `gene_symbol` column, which only the `_mapped.csv` files have
+(23,520 distinct symbols for each GPL570 cohort, 19,565 for GPL6480).
+
+### 4. The pathway panel is fixed and literature-defined
+
+`results_tables/pathway_activity/` scores 44 gene sets — 26 KEGG legacy and 18
+Hallmark — hard-coded in `scripts/14_ssgsea_pathway_scoring.R`. They were
+enumerated before any cohort was scored and no set was added, dropped or
+re-ranked using expression data here. The list, per-set gene counts and the
+check that all 44 fall inside the `minSize = 10 / maxSize = 500` window are in
+Supplementary Table S16.
+
+### 5. The probe filter described in the Methods is not present in these tables
+
+The Methods state that an interquartile-range filter reduced the GPL570 probe set
+from 54,675 to roughly 19,000 before differential testing. The committed
+per-cohort tables contradict that: every GPL570 `DEG_<cohort>_limma.csv` holds
+exactly **54,675 rows** (GPL6480 holds all 41,093), i.e. the filter did not act in
+the run that produced the published DEG and meta-analysis tables.
+
+Evidence that this is the filter and not the sample sets: the four GPL570 cohorts
+have sample counts of 164, 83, 124 and 30 yet all three of their mapping outputs
+are **identically 23,520 mapped and 8,893 unmapped rows** - a shared, unfiltered
+probe universe mapped onto a shared annotation. Re-running the same limma design
+with the documented filter active gives cohort-specific probe counts of 18,846,
+23,251, 19,944 and 15,923, and collapses the five-cohort meta-analysis from 286
+genes to single digits. This is the largest open discrepancy between the
+manuscript text and the deposited artifacts.
+
+### 6. Quantified: what the scale repair alone is worth
+
+Keeping the code, samples, filter, mapping and Stouffer definition fixed and
+switching only the log2 transform for GSE28702 and GSE69657, the five-cohort
+signature moves from **4 genes to 9** (BH FDR < 0.05): 4 genes are significant
+either way (BAG5, LDLRAD4, PCGF5, PRDM2), 5 are added, none are lost, Jaccard
+0.444. The input-scale defect is therefore real but mild in effect, and it is not
+the origin of the reported signature. See `verify/` and the note in item 5.
+
+## Data sources
+
+Public, re-downloadable; nothing proprietary or patient-identifiable is
+included.
+
+| Accession | Platform | Role |
+|---|---|---|
+| GSE39582 | GPL570 | discovery (adjuvant, fluoropyrimidine-based) |
+| GSE104645 | GPL6480 | validation (restricted to oxaliplatin-containing regimens) |
+| GSE28702 | GPL570 | validation (mFOLFOX6) |
+| GSE72970 | GPL570 | validation (regimen unrestricted; 71% irinotecan-containing) |
+| GSE69657 | GPL570 | validation (neoadjuvant FOLFOX4) |
+| GSE156915 | GPL29069 | CMS / DDIR / MSI / mutation annotation |
+| GSE132465 | — | single-cell validation |
+| TCGA-COADREAD | RNA-seq | external application of the frozen nomogram |
+| MSigDB v2024.1 | h.all, c2.cp.kegg_legacy | gene sets |
+
+## Environment
+
+R 4.6.0 and Python 3.14. Package versions actually used are recorded in
+`MANIFEST_gdc_download.txt` (GDC inputs) and in `verify/session_info.txt`.
+
+`limma`, `edgeR`, `Biobase` and `GSVA` are **not vendored here** and were not
+present in the R library at the time of this deposit, which is why
+reproducing the DEG layer requires installing them first (see `install_deps.R`).
+
+## Layout
+
+```
+scripts/            numbered analysis scripts, run in order; 00_run_all.R orchestrates
+  01-07b            data intake, DEG, WGCNA, candidate pool, enrichment
+  09-12             gene-level ensemble fingerprint and its validation
+  13                ComBat batch correction (QC + fingerprint transfer only)
+  14-19             ssGSEA panel, pathway modelling, meta-analysis enrichment
+  21-39             PRS, nomogram, nested cross-validation, external validation
+results_tables/     derived tables only (no clinical contact data, no matrices)
+verify/             checks backing the KNOWN ISSUES above
+```
+
+## What is deliberately excluded
+
+* raw and processed expression data, and the GDC tree — re-download instead;
+* `results_tables/*_clinical_data.csv` — these were parsed from GEO series
+  matrices and carry the original submitters' names and e-mail addresses;
+* `scripts/node_modules/` and `__pycache__/`;
+* the 170 MB combined expression matrix.
+
+TCGA participant barcodes are retained: they are pseudonymous, already public,
+and required to reproduce the TCGA analyses.
+
+Machine-specific absolute paths were replaced by `/path/to/xelox_project` and
+`/home/user` before release, so set `PROJECT_ROOT` accordingly before running.

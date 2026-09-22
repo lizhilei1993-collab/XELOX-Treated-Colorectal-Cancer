@@ -1,0 +1,9 @@
+"Gene","GSE39582_logFC","GSE39582_Direction","TCGA_Mean_Resistant","TCGA_Mean_Sensitive","TCGA_logFC","TCGA_Direction","Concordant"
+"CSNK1G2",-0.2059,"down",6.5491,6.5233,0.0258,"up",FALSE
+"KAZN",0.364,"up",3.7465,3.4077,0.3387,"up",TRUE
+"KLK6",0.9167,"up",3.5051,2.8137,0.6914,"up",TRUE
+"MGA",0.2778,"up",5.3147,5.0902,0.2246,"up",TRUE
+"MID2",0.3493,"up",2.5244,2.5161,0.0083,"up",TRUE
+"SOX11",0.2143,"up",1.0338,0.7971,0.2367,"up",TRUE
+"TAS2R40",-0.0809,"down",0.1574,0.0013,0.1562,"up",FALSE
+"ZNF451",0.363,"up",4.6744,4.789,-0.1147,"down",FALSE

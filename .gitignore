@@ -1,0 +1,18 @@
+# never commit data or environment trees
+data/
+GDCdata/
+r_libs/
+node_modules/
+__pycache__/
+*.rds
+*.rda
+*.RData
+.Rhistory
+
+# GEO-derived clinical sheets carry the original submitters' names and e-mails
+*_clinical_data.csv
+
+# agent / editor scaffolding
+.workbuddy/
+*.tmp
+Thumbs.db

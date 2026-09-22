@@ -1,0 +1,21 @@
+file=deg_meta_results.csv rows=25568 cols=27
+
+=== step 1: reproduce the published statistic ===
+genes tested          : 25568   (summary says 23520)
+FDR<0.05 count        : 2   (summary says 253)
+  LDLRAD4    reconstructed z=+4.858 p=1.18855e-06  (summary z=-5.446)  DIFFERS
+  WIPI2      reconstructed z=+4.009 p=6.09994e-05  (summary z=-4.741)  DIFFERS
+top-20 genes recovered: 20
+
+=== step 2: identical rule, GSE28702 + GSE69657 removed ===
+genes tested          : 25568
+FDR<0.05 count        : 0   (was 2)
+retained              : 0
+lost                  : 2
+newly significant     : 0
+Jaccard               : 0.000
+
+first 15 lost genes: LDLRAD4, LINC00957
+first 15 new genes : 
+
+CAVEAT: step 2 only holds if step 1 reproduced the published numbers.

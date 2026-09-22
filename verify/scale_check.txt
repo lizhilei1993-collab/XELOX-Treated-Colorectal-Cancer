@@ -1,0 +1,5 @@
+GSE39582    class=ExpressionSet  not coercible to matrix
+GSE104645   class=matrix    dims=41093x193   min=-11.37   med=0.00    p99=3.25     max=16.19      log2-consistent
+GSE28702    class=matrix    dims=54675x83    min=0.00     med=39.24   p99=3084.29  max=405930.29  <== NOT log2 (linear scale)
+GSE72970    class=matrix    dims=54675x124   min=2.32     med=5.79    p99=12.01    max=14.93      log2-consistent
+GSE69657    class=matrix    dims=54675x30    min=1.00     med=98.58   p99=5735.62  max=26153.57   <== NOT log2 (linear scale)

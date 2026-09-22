@@ -1,0 +1,7 @@
+drug,PRS_high,PRS_low,diff,p
+Regorafenib_sensitivity,0.313,-0.313,0.626,0.0001
+Bevacizumab_antiVEGF,0.229,-0.229,0.458,0.0027
+Irinotecan(SN38)_sensitivity,0.042,-0.042,0.084,0.6323
+Cetuximab_antiEGFR,-0.107,0.107,-0.214,0.1118
+Oxaliplatin_sensitivity,-0.133,0.133,-0.265,0.2904
+TAS102_sensitivity,-0.134,0.134,-0.267,0.1074

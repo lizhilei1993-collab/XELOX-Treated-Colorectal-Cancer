@@ -1,0 +1,2 @@
+category,n_genes,up_in_resistant,down_in_resistant,targetable
+MAPK/ERK,1,,EGFR,Yes

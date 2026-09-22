@@ -1,0 +1,94 @@
+"Tier","Ontology","Term","p.adjust","Count"
+"All","BP","muscle structure development",8.69160344501081e-07,113
+"All","BP","actin cytoskeleton organization",9.11322057461467e-07,131
+"All","BP","heart development",2.83413395842068e-06,90
+"All","BP","supramolecular fiber organization",4.22952643586902e-06,140
+"All","BP","cell morphogenesis",8.29238485950291e-06,134
+"Tier2_DEG_WGCNA","BP","muscle structure development",1.84658458748277e-14,54
+"Tier2_DEG_WGCNA","BP","vasculature development",4.68529837241339e-13,58
+"Tier2_DEG_WGCNA","BP","muscle system process",8.22048311865831e-13,46
+"Tier2_DEG_WGCNA","BP","extracellular matrix organization",8.22048311865831e-13,35
+"Tier2_DEG_WGCNA","BP","extracellular structure organization",8.22048311865831e-13,35
+"Tier3_DEG_Metab","BP","folic acid-containing compound metabolic process",1.05840213062917e-09,6
+"Tier3_DEG_Metab","BP","pteridine-containing compound metabolic process",2.39444678798542e-09,6
+"Tier3_DEG_Metab","BP","tetrahydrofolate metabolic process",9.77944873827144e-06,4
+"Tier3_DEG_Metab","BP","modified amino acid metabolic process",3.42851912838134e-05,6
+"Tier3_DEG_Metab","BP","pyrimidine-containing compound biosynthetic process",0.000143417134270879,4
+"Tier4_MultiDEG","BP","positive regulation of canonical Wnt signaling pathway",0.0198123699411829,25
+"Tier4_MultiDEG","BP","ubiquitin-dependent protein catabolic process",0.0198123699411829,93
+"Tier4_MultiDEG","BP","positive regulation of catabolic process",0.0198123699411829,84
+"Tier4_MultiDEG","BP","modification-dependent protein catabolic process",0.0198123699411829,93
+"Tier4_MultiDEG","BP","modification-dependent macromolecule catabolic process",0.0221005586938583,93
+"Tier5_WGCNA_Hub","BP","lymphocyte activation",0.00505220373799142,7
+"Tier5_WGCNA_Hub","BP","regulation of lymphocyte activation",0.00505220373799142,6
+"Tier5_WGCNA_Hub","BP","T cell activation",0.00562688188548094,6
+"Tier5_WGCNA_Hub","BP","regulation of leukocyte activation",0.00562688188548094,6
+"Tier5_WGCNA_Hub","BP","regulation of cell activation",0.00757322448096162,6
+"HighPriority","BP","muscle structure development",3.29226278762973e-13,54
+"HighPriority","BP","extracellular matrix organization",3.29226278762973e-13,37
+"HighPriority","BP","extracellular structure organization",3.29226278762973e-13,37
+"HighPriority","BP","external encapsulating structure organization",3.29226278762973e-13,37
+"HighPriority","BP","vasculature development",1.58473891537041e-12,59
+"Tier1_2","BP","muscle structure development",2.0449746598701e-14,54
+"Tier1_2","BP","vasculature development",5.20324660233436e-13,58
+"Tier1_2","BP","muscle system process",8.81075602645781e-13,46
+"Tier1_2","BP","extracellular matrix organization",8.81075602645781e-13,35
+"Tier1_2","BP","extracellular structure organization",8.81075602645781e-13,35
+"All","CC","actin cytoskeleton",1.1729943090733e-09,106
+"All","CC","extracellular matrix",1.1729943090733e-09,107
+"All","CC","external encapsulating structure",1.47363458947449e-09,107
+"All","CC","cell leading edge",1.7391223341394e-08,92
+"All","CC","cell-substrate junction",1.7391223341394e-08,88
+"Tier2_DEG_WGCNA","CC","extracellular matrix",1.50744388547517e-28,67
+"Tier2_DEG_WGCNA","CC","external encapsulating structure",1.50744388547517e-28,67
+"Tier2_DEG_WGCNA","CC","contractile muscle fiber",7.82857563807532e-17,37
+"Tier2_DEG_WGCNA","CC","myofibril",7.22148214935796e-15,34
+"Tier2_DEG_WGCNA","CC","actin cytoskeleton",5.50236279089727e-14,47
+"Tier3_DEG_Metab","CC","basolateral plasma membrane",0.00397624247295461,5
+"Tier3_DEG_Metab","CC","basal plasma membrane",0.00397624247295461,5
+"Tier3_DEG_Metab","CC","basal part of cell",0.00397624247295461,5
+"Tier4_MultiDEG","CC","ribonucleoprotein granule",1.87647559376914e-05,101
+"Tier4_MultiDEG","CC","early endosome",1.87647559376914e-05,71
+"Tier4_MultiDEG","CC","endosome membrane",0.00138128213914386,82
+"Tier4_MultiDEG","CC","cell leading edge",0.00138128213914386,63
+"Tier4_MultiDEG","CC","phagocytic vesicle",0.00139811794349663,29
+"HighPriority","CC","extracellular matrix",1.78398824603364e-27,68
+"HighPriority","CC","external encapsulating structure",1.78398824603364e-27,68
+"HighPriority","CC","contractile muscle fiber",8.53114665444526e-16,37
+"HighPriority","CC","actin cytoskeleton",1.07539811006963e-14,50
+"HighPriority","CC","myofibril",5.05780872407924e-14,34
+"Tier1_2","CC","extracellular matrix",1.7251068009044e-28,67
+"Tier1_2","CC","external encapsulating structure",1.7251068009044e-28,67
+"Tier1_2","CC","contractile muscle fiber",8.42361339757405e-17,37
+"Tier1_2","CC","myofibril",7.71847422317133e-15,34
+"Tier1_2","CC","actin cytoskeleton",5.990945699581e-14,47
+"All","MF","actin binding",3.00911427814263e-05,90
+"All","MF","SMAD binding",5.10541545431532e-05,27
+"All","MF","collagen binding",0.000160388382797356,23
+"All","MF","extracellular matrix structural constituent",0.000194203252560819,44
+"All","MF","cell adhesion molecule binding",0.000194203252560819,113
+"Tier2_DEG_WGCNA","MF","extracellular matrix structural constituent",1.08765142789174e-18,35
+"Tier2_DEG_WGCNA","MF","collagen binding",2.57031198753084e-08,15
+"Tier2_DEG_WGCNA","MF","actin binding",1.26960838406458e-07,36
+"Tier2_DEG_WGCNA","MF","growth factor binding",2.6356080519184e-07,19
+"Tier2_DEG_WGCNA","MF","cytokine binding",5.71074075537061e-07,19
+"Tier3_DEG_Metab","MF","folic acid binding",0.000514246790994577,3
+"Tier3_DEG_Metab","MF","modified amino acid binding",0.00162575215178963,4
+"Tier3_DEG_Metab","MF","ATPase-coupled transmembrane transporter activity",0.00162575215178963,4
+"Tier3_DEG_Metab","MF","xenobiotic transmembrane transporter activity",0.00162575215178963,3
+"Tier3_DEG_Metab","MF","vitamin binding",0.00543011690602982,4
+"Tier4_MultiDEG","MF","transcription factor binding",0.002613672481847,85
+"Tier4_MultiDEG","MF","TAP binding",0.002613672481847,6
+"Tier4_MultiDEG","MF","protein domain specific binding",0.00263948352432759,90
+"Tier4_MultiDEG","MF","DNA-binding transcription factor binding",0.00735114247407373,70
+"Tier4_MultiDEG","MF","transcription coregulator activity",0.0248646999086156,74
+"HighPriority","MF","extracellular matrix structural constituent",1.38124287866064e-17,35
+"HighPriority","MF","collagen binding",7.6471198672388e-08,15
+"HighPriority","MF","actin binding",2.8945805565153e-07,37
+"HighPriority","MF","growth factor binding",9.55667839374938e-07,19
+"HighPriority","MF","cytokine binding",2.04025956480236e-06,19
+"Tier1_2","MF","extracellular matrix structural constituent",1.17090678363924e-18,35
+"Tier1_2","MF","collagen binding",2.65277305861141e-08,15
+"Tier1_2","MF","actin binding",1.35093192125535e-07,36
+"Tier1_2","MF","growth factor binding",2.73613900385389e-07,19
+"Tier1_2","MF","cytokine binding",5.92612881987728e-07,19

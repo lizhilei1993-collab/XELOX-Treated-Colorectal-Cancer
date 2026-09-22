@@ -1,0 +1,8 @@
+"Metric","Gene_Level","Pathway_Level"
+"Feature type","Top 500 genes (univariate Cox p)","44 ssGSEA scores"
+"Modeling method","LASSO-Cox (cv.glmnet)","LASSO-Cox (cv.glmnet)"
+"Total candidates","500","44"
+"Selected","74","7"
+"Apparent C-index","0.9313","0.6563"
+"Events","79","79"
+"EPV","1.1","11.3"

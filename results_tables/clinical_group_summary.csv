@@ -1,0 +1,7 @@
+"Dataset","n","Platform","Cohort","Resistant_def","Sensitive_def","n_Resistant","n_Sensitive","n_Intermediate","XELOX_specific","Notes"
+"GSE39582",585,"Array","CIT (adjuvant FOLFOX/5-FU)","RFS event <= 12mo","No event, FU >= 36mo",45,119,75,"FOLFOX (n=23): 7R/1S/15I","Primary CIT cohort. All chemo types pooled for main analysis."
+"GSE72970",124,"Array","Metastatic CRC chemo response","PD/SD","CR/PR",59,61,NA,"FOLFOX/XELIRI (n=37): response-based","Multiple regimens (FOLFOX/FOLFIRI/XELIRI). Subset to FOLFOX-like."
+"GSE104645",193,"Array","1st-line metastatic CRC","PD/SD","CR/PR",47,66,NA,"FOLFOX/SOX/XELOX (n=117): response-based","Largest XELOX/FOLFOX response dataset."
+"GSE28702",83,"Array (GPL570)","mFOLFOX6 responder vs non-responder","non-responder (label)","responder (label)",17,13,NA,"mFOLFOX6 (n=83): clean binary labels","Pre-treatment biopsies. Clean responder/non-responder labels."
+"GSE69657",30,"Array","XELOX neoadjuvant","noresponder","responder",17,13,NA,"PURE XELOX (n=30): highest relevance","XELOX neoadjuvant. Ideal for pure XELOX resistance analysis."
+"GSE19860",40,"Array (GPL570)","Capecitabine (FL) response","FL_Non_responder","FL_Responder",25,15,NA,"Capecitabine (n=40)","Some samples have combined BV (Bevacizumab) response."
