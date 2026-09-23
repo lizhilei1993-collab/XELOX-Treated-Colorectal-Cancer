@@ -76,22 +76,42 @@ re-ranked using expression data here. The list, per-set gene counts and the
 check that all 44 fall inside the `minSize = 10 / maxSize = 500` window are in
 Supplementary Table S16.
 
-### 5. The probe filter described in the Methods is not present in these tables
+### 5. The Methods' probe filter postdates the tables it is supposed to describe
 
 The Methods state that an interquartile-range filter reduced the GPL570 probe set
-from 54,675 to roughly 19,000 before differential testing. The committed
-per-cohort tables contradict that: every GPL570 `DEG_<cohort>_limma.csv` holds
-exactly **54,675 rows** (GPL6480 holds all 41,093), i.e. the filter did not act in
-the run that produced the published DEG and meta-analysis tables.
+from 54,675 to roughly 19,000 before differential testing. The filter **is**
+implemented, in `analyze_deg_limma()` in `scripts/03_deg_analysis.R`:
 
-Evidence that this is the filter and not the sample sets: the four GPL570 cohorts
-have sample counts of 164, 83, 124 and 30 yet all three of their mapping outputs
-are **identically 23,520 mapped and 8,893 unmapped rows** - a shared, unfiltered
-probe universe mapped onto a shared annotation. Re-running the same limma design
-with the documented filter active gives cohort-specific probe counts of 18,846,
-23,251, 19,944 and 15,923, and collapses the five-cohort meta-analysis from 286
-genes to single digits. This is the largest open discrepancy between the
-manuscript text and the deposited artifacts.
+```r
+# Filter low-expression genes (v6.0 fix: IQR-based filter for microarray)
+probe_iqr  <- apply(expr_mat, 1, IQR, na.rm = TRUE)
+probe_med  <- apply(expr_mat, 1, median, na.rm = TRUE)
+overall_med <- median(expr_mat, na.rm = TRUE)
+keep <- probe_med >= overall_med & probe_iqr >= 0.5
+```
+
+but the deposited tables were not produced by it. The file dates on the analysis
+project settle it: `DEG_<cohort>_limma.csv` and the 1 GB workspace image are
+timestamped 2026-05-14, `meta_analysis/deg_meta_*.csv` 2026-05-17, and
+`03_deg_analysis.R` was last modified 2026-06-02 — nineteen and sixteen days
+later. The re-run wrapper added alongside it (`scripts/run_03_deg.R`) writes to a
+scratch directory, and no filtered output was ever promoted into `results/tables`.
+So this is a stale-artifact problem, not an invented method: the code describes
+what the analysis should do, the shipped tables show what it did at the time.
+
+The tables are unfiltered, and demonstrably so. All four GPL570 cohorts carry
+exactly **54,675** rows (GSE104645, GPL6480, carries all **41,093**), and their
+mapping outputs are **identically 23,520 mapped and 8,893 unmapped rows** despite
+sample counts of 164, 83, 124 and 30 — because `scripts/06_probe_to_gene_mapping.R`
+reads each `DEG_<cohort>_limma.csv` and maps it onto the platform annotation, so
+identical counts mean the input probe sets were identical and unfiltered.
+Re-running the same limma design with the filter active gives cohort-specific
+probe counts of 18,846, 23,251, 19,944 and 15,923, and collapses the five-cohort
+meta-analysis from 286 genes to single digits. Regenerating the DEG and
+meta-analysis tables with the committed script — which would also carry the scale
+repair of items 1 and 6 — is the coherent way to close this, and it is not yet
+done. This is the largest open discrepancy between the manuscript text and the
+deposited artifacts.
 
 ### 6. Quantified: what the scale repair alone is worth
 
