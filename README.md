@@ -11,7 +11,7 @@ is public, so the caveats below are part of the release, not internal notes.
 
 ## KNOWN ISSUES
 
-### 1. Two of five cohorts were analysed on a linear expression scale
+### 1. Two of five cohorts were analysed on a linear expression scale — resolved 2026-09-24
 
 `scripts/03_deg_analysis.R` contains the assertion
 
@@ -32,9 +32,14 @@ Consequences, in order of severity:
 * The **p-values and directions** for those two cohorts come from a test on an
   untransformed, heteroscedastic scale dominated by the most abundant
   transcripts, so they are not comparable to the other three cohorts.
-* The five-cohort Stouffer meta-analysis therefore does **not** currently have a
-  defensible basis; the gene count reported in the manuscript is being
-  recomputed on a corrected scale.
+* The five-cohort Stouffer meta-analysis therefore did **not** have a defensible
+  basis as deposited. **Resolved 2026-09-24:** re-running GSE28702 and GSE69657 on
+  log2 scale (same limma core and same `annotate_*` group rules as
+  `scripts/03_deg_analysis.R`) and applying BH FDR < 0.05 **without** the IQR probe
+  filter yields **nine genes** (LDLRAD4, PRDM2, PCGF5, BAG5, APOL6, STON2, WDFY3,
+  SLC25A28, KIAA1257). This nine-gene set replaces the 253-gene signature computed
+  before the scale correction; the manuscript reports the nine and cites the 253
+  only as the superseded pre-correction artifact.
 * Within 36.7% of genes (3,895/10,618) in the meta-analysis table, at least one
   cohort contributes an |logFC| above 5.
 
@@ -98,6 +103,11 @@ later. The re-run wrapper added alongside it (`scripts/run_03_deg.R`) writes to 
 scratch directory, and no filtered output was ever promoted into `results/tables`.
 So this is a stale-artifact problem, not an invented method: the code describes
 what the analysis should do, the shipped tables show what it did at the time.
+**Resolution (2026-09-24):** the finalized manuscript discloses this IQR filter as
+*considered during audit but not applied*, because it discards more than half of
+all GPL570 probes, and the scale-corrected nine-gene meta-analysis result in
+issue 1 is computed without it. Applying the filter would reduce the nine genes
+to zero (smallest q = 0.052), which is precisely why it is not applied.
 
 The tables are unfiltered, and demonstrably so. All four GPL570 cohorts carry
 exactly **54,675** rows (GSE104645, GPL6480, carries all **41,093**), and their
