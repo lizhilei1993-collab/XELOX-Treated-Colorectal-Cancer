@@ -11,7 +11,7 @@ library(ggplot2)
 library(patchwork)
 library(dplyr)
 
-PROJECT <- "/path/to/xelox_project"
+PROJECT <- "/path/to/xelox_project基于可解释性机器学习的XELOX耐药分子指纹研究"
 OUT_DIR  <- file.path(PROJECT, "results/tables/tgfb_paradox")
 FIG_DIR  <- file.path(PROJECT, "results/figures/tgfb_paradox")
 dir.create(OUT_DIR, showWarnings = FALSE, recursive = TRUE)
@@ -34,8 +34,8 @@ read_gmt <- function(gmt_file) {
   return(gs_list)
 }
 
-hallmark_all <- read_gmt("C:/temp/h.all.v2024.1.symbols.gmt")
-kegg_all <- read_gmt("C:/temp/c2.cp.kegg_legacy.v2024.1.symbols.gmt")
+hallmark_all <- read_gmt("/tmp/h.all.v2024.1.symbols.gmt")
+kegg_all <- read_gmt("/tmp/c2.cp.kegg_legacy.v2024.1.symbols.gmt")
 
 hm_genes <- sort(hallmark_all[["HALLMARK_TGF_BETA_SIGNALING"]])
 kg_genes <- sort(kegg_all[["KEGG_TGF_BETA_SIGNALING_PATHWAY"]])
@@ -164,7 +164,7 @@ de_results$KEGG_only <- de_results$Gene %in% kg_only
 de_results$Category <- with(de_results,
   ifelse(Shared, "Shared (n=19)",
     ifelse(HALLMARK_only, "HALLMARK-only (n=35)",
-      "KEGG-only (n=67"))))
+      "KEGG-only (n=67)")))
 
 # BH correction
 de_results$BH_FDR <- p.adjust(de_results$p_value, method = "BH")

@@ -5,10 +5,10 @@
 # XELOX Resistance Study
 # ============================================================
 
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
-PROJECT_ROOT <- "C:/xelox_research"
+PROJECT_ROOT <- "/path/to/xelox_project"
 DATA_GEO_DIR  <- file.path(PROJECT_ROOT, "data", "geo")
 DATA_PROC_DIR <- file.path(PROJECT_ROOT, "data", "processed")
 RESULTS_TAB_DIR <- file.path(PROJECT_ROOT, "results", "tables")

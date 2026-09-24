@@ -5,7 +5,7 @@ import csv, os, math
 import numpy as np
 
 BASE = r'/path/to/xelox_project'
-TMP = r'E:/tmp/output'
+TMP = r'/tmp/scratch/output'
 
 # 1. Read Cox final results
 cox_rows = []

@@ -1,6 +1,6 @@
 # Test DGN (DisGeNET) enrichment - uses built-in DOSE data
-Sys.setenv(HOME = "C:/temp", TMPDIR = "C:/temp", TEMP = "C:/temp", TMP = "C:/temp")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(HOME = "/tmp", TMPDIR = "/tmp", TEMP = "/tmp", TMP = "/tmp")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
 library(DOSE)
 library(org.Hs.eg.db)
@@ -53,5 +53,5 @@ if (!is.null(result_dgnv)) {
 }
 
 cat("\n=== Package search: HDO.db ===\n")
-cat("HDO.db in C:/Rlibs:", file.exists("C:/Rlibs/HDO.db"), "\n")
+cat("HDO.db in /path/to/Rlibs:", file.exists("/path/to/Rlibs/HDO.db"), "\n")
 cat("HDO.db in system lib:", file.exists(file.path(.Library, "HDO.db")), "\n")

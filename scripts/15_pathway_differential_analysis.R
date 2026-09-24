@@ -17,13 +17,13 @@
 #            pathway_boxplot_top4.pdf
 # ============================================================
 
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
 # PROJECT_ROOT from environment variable to avoid Chinese path issues
-# Set via PowerShell: [Environment]::SetEnvironmentVariable("XELOX_ROOT","C:/xelox_work","User")
+# Set via PowerShell: [Environment]::SetEnvironmentVariable("XELOX_ROOT","/path/to/xelox_project","User")
 PROJECT_ROOT <- Sys.getenv("XELOX_ROOT",
-  "C:/xelox_work")
+  "/path/to/xelox_project")
 DATA_GEO_DIR     <- file.path(PROJECT_ROOT, "data", "geo")
 RESULTS_TAB_DIR  <- file.path(PROJECT_ROOT, "results", "tables")
 RESULTS_FIG_DIR  <- file.path(PROJECT_ROOT, "results", "figures")

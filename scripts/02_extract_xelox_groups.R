@@ -3,14 +3,14 @@
 # Extract XELOX-treated patients and define resistance/sensitive groups
 # ============================================================
 
-lib_path <- "C:/Rlibs"
+lib_path <- "/path/to/Rlibs"
 .libPaths(c(lib_path, .libPaths()))
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
 
 library(GEOquery)
 library(survival)
 
-PROJECT_ROOT <- "C:/xelox_research"
+PROJECT_ROOT <- "/path/to/xelox_project"
 DATA_GEO_DIR  <- file.path(PROJECT_ROOT, "data", "geo")
 DATA_PROC_DIR <- file.path(PROJECT_ROOT, "data", "processed")
 RESULTS_TAB_DIR <- file.path(PROJECT_ROOT, "results", "tables")

@@ -1,9 +1,9 @@
 # 28b_parse_gse83129.R
 # 解析 GSE83129 表达矩阵和临床数据
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
-PROJECT_ROOT <- "C:/xelox_research"
+PROJECT_ROOT <- "/path/to/xelox_project"
 GEO_DIR <- file.path(PROJECT_ROOT, "data", "geo")
 
 library(GEOquery)

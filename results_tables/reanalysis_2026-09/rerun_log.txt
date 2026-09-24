@@ -1,0 +1,18 @@
+lifted annotators: annotate_GSE104645, annotate_GSE28702, annotate_GSE39582, annotate_GSE69657, annotate_GSE72970
+GSE39582: labelled samples 164 -> matched to expression columns 164 (45 resistant / 119 sensitive)
+GSE39582   : max 16.11       already log2, untouched
+GSE39582   : 18846 probes tested | adj.P<0.05 = 0 (0 up / 0 down) | max |logFC| = 0.953
+GSE104645: labelled samples 113 -> matched to expression columns 113 (47 resistant / 66 sensitive)
+GSE104645   : max 16.04       already log2, untouched
+GSE104645   : 19724 probes tested | adj.P<0.05 = 0 (0 up / 0 down) | max |logFC| = 0.832
+GSE28702: labelled samples 83 -> matched to expression columns 83 (41 resistant / 42 sensitive)
+GSE28702   : max 405930.3    LINEAR -> log2(x+1) applied
+GSE28702   : 23251 probes tested | adj.P<0.05 = 4 (2 up / 2 down) | max |logFC| = 1.879
+GSE72970: labelled samples 124 -> matched to expression columns 124 (61 resistant / 63 sensitive)
+GSE72970   : max 14.93       already log2, untouched
+GSE72970   : 19944 probes tested | adj.P<0.05 = 0 (0 up / 0 down) | max |logFC| = 1.115
+GSE69657: labelled samples 30 -> matched to expression columns 30 (17 resistant / 13 sensitive)
+GSE69657   : max 26153.6     LINEAR -> log2(x+1) applied
+GSE69657   : 15923 probes tested | adj.P<0.05 = 0 (0 up / 0 down) | max |logFC| = 1.939
+
+DONE. corrected tables in /path/to/xelox_reanalysis/rerun_final/

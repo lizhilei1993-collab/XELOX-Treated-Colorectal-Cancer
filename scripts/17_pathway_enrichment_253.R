@@ -6,21 +6,21 @@
 # XELOX Resistance Study
 # ============================================================
 
-Sys.setenv(HOME = "C:/temp", TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp",
-           R_LIBS_USER = "C:/Rlibs",
-           R_USER_CACHE_DIR = "C:/temp/Rcache")  # avoid Chinese chars in default cache path
+Sys.setenv(HOME = "/tmp", TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp",
+           R_LIBS_USER = "/path/to/Rlibs",
+           R_USER_CACHE_DIR = "/tmp/Rcache")  # avoid Chinese chars in default cache path
 # Also override msigdbr cache dir via options
-options(msigdbr_cache_dir = "C:/temp/Rcache/msigdbr")
+options(msigdbr_cache_dir = "/tmp/Rcache/msigdbr")
 # Set locale to C to avoid issues with non-ASCII paths in read.csv
 suppressWarnings(Sys.setlocale("LC_ALL", "C"))
-.libPaths(c("C:/Rlibs", .libPaths()))
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
 # Use short (ASCII-only) temp paths for I/O
 # NOTE: deg_meta_results.csv contains ALL 25568 genes from the meta-analysis.
 #       We filter stouffer_fdr < 0.05 to obtain the 253 significant genes.
-TEMP_INPUT      <- "C:/temp/xelox_input/deg_meta_results.csv"
-ENRICH_DIR      <- "C:/temp/xelox_output/tables"
-FIG_DIR         <- "C:/temp/xelox_output/figures"
+TEMP_INPUT      <- "/tmp/xelox_input/deg_meta_results.csv"
+ENRICH_DIR      <- "/tmp/xelox_output/tables"
+FIG_DIR         <- "/tmp/xelox_output/figures"
 
 dir.create(ENRICH_DIR, showWarnings = FALSE, recursive = TRUE)
 dir.create(FIG_DIR, showWarnings = FALSE, recursive = TRUE)
@@ -191,7 +191,7 @@ cat("\n")
 # ============================================================
 cat("=== [3b] Loading cached KEGG data ===\n\n")
 
-KEGG_CACHE_DIR <- "C:/temp/tcga_review"
+KEGG_CACHE_DIR <- "/tmp/tcga_review"
 kegg_link_file <- file.path(KEGG_CACHE_DIR, "kegg_link_hsa_pathway.txt")
 kegg_list_file <- file.path(KEGG_CACHE_DIR, "kegg_list_pathway_hsa.txt")
 kegg_conv_file <- file.path(KEGG_CACHE_DIR, "kegg_conv_ncbi_hsa.txt")
@@ -324,7 +324,7 @@ cat("=== [5] MSigDB Hallmark + C2 Enrichment ===\n\n")
 # --- 5a. Hallmark (from local GMT, no msigdbr dependency) ---
 cat("--- [5a] Hallmark gene sets (GMT) ---\n\n")
 
-GMT_HALLMARK <- "C:/temp/h.all.v2024.1.symbols.gmt"
+GMT_HALLMARK <- "/tmp/h.all.v2024.1.symbols.gmt"
 h_gmt <- tryCatch({
   read_gmt_simple(GMT_HALLMARK)
 }, error = function(e) {
@@ -395,7 +395,7 @@ if (is.null(h_gmt) || nrow(h_gmt) == 0) {
 # --- 5b. C2 Curated (from local GMT, CP:KEGG legacy) ---
 cat("--- [5b] C2 Curated (GMT: c2.cp.kegg_legacy) ---\n\n")
 
-GMT_C2 <- "C:/temp/c2.cp.kegg_legacy.v2024.1.symbols.gmt"
+GMT_C2 <- "/tmp/c2.cp.kegg_legacy.v2024.1.symbols.gmt"
 c2_gmt <- tryCatch({
   read_gmt_simple(GMT_C2)
 }, error = function(e) {

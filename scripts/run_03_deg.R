@@ -1,12 +1,12 @@
 # ============================================================
 # run_03_deg.R  -  Wrapper for 03_deg_analysis.R
-# Reads data from C:/xelox_research (ASCII-safe symlink)
-# Writes output to E:/xelox_tmp  (sandbox-safe path)
+# Reads data from /path/to/xelox_project (ASCII-safe symlink)
+# Writes output to /path/to/xelox_tmp  (sandbox-safe path)
 # ============================================================
 
 # --- Environment setup ---
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
 # Set locale so R can handle CJK paths on Windows codepage 936
 if (.Platform$OS.type == "windows") {
@@ -26,9 +26,9 @@ library(GEOquery)
 
 # --- Paths ---
 # READ from the symlink (ASCII-safe, junction for data)
-READ_ROOT  <- "C:/xelox_research"
+READ_ROOT  <- "/path/to/xelox_project"
 # WRITE to a temp location the sandbox does not block
-WRITE_ROOT <- "C:/xelox_research/tmp_v6fix"
+WRITE_ROOT <- "/path/to/xelox_project/tmp_v6fix"
 dir.create(WRITE_ROOT, showWarnings = FALSE, recursive = TRUE)
 
 DATA_GEO_DIR  <- file.path(READ_ROOT,  "data", "geo")
@@ -36,7 +36,7 @@ DATA_PROC_DIR <- file.path(READ_ROOT,  "data", "processed")
 # Read clinical data from results/tables on C:
 READ_TAB_DIR  <- file.path(READ_ROOT,  "results", "tables")
 READ_FIG_DIR  <- file.path(READ_ROOT,  "results", "figures")
-# Write results to E:/xelox_tmp
+# Write results to /path/to/xelox_tmp
 RESULTS_TAB_DIR <- file.path(WRITE_ROOT, "results", "tables")
 RESULTS_FIG_DIR <- file.path(WRITE_ROOT, "results", "figures")
 dir.create(RESULTS_TAB_DIR, showWarnings = FALSE, recursive = TRUE)

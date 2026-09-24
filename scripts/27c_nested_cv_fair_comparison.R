@@ -1,8 +1,8 @@
 
-.libPaths(c("C:/Rlibs", .libPaths()))
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 suppressPackageStartupMessages({ library(survival); library(glmnet) })
 options(warn = -1)
-STAGE <- "C:/xelox_reanalysis"; IN <- file.path(STAGE, "input"); OUT <- file.path(STAGE, "nested")
+STAGE <- "/path/to/xelox_reanalysis"; IN <- file.path(STAGE, "input"); OUT <- file.path(STAGE, "nested")
 dir.create(OUT, showWarnings = FALSE, recursive = TRUE)
 ts <- function() format(Sys.time(), "%H:%M:%S")
 say <- function(...) cat("[", ts(), "] ", paste0(...), "\n", sep = "")

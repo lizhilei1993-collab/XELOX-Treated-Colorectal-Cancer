@@ -9,7 +9,7 @@ import pandas as pd
 import numpy as np
 import os
 
-GEO_DIR = "C:/xelox_research/data/geo"
+GEO_DIR = "/path/to/xelox_project/data/geo"
 GZ_FILE = os.path.join(GEO_DIR, "GSE83129_series_matrix.txt.gz")
 
 # ============================================================

@@ -20,22 +20,22 @@
 #   GSE39582_xelox_groups.csv           — response labels
 #   GSE104645_clinical_data.csv         — RECIST response
 #
-# Output (C:/xelox_work/results/tables/bootstrap_stability/):
+# Output (/path/to/xelox_project/results/tables/bootstrap_stability/):
 #   bootstrap_selection_freq.csv        — selection frequency table
 #   bootstrap_coefficient_dist.csv      — coefficient distribution
 #   bootstrap_stability_report.txt      — text summary
 #   bootstrap_corr_matrix.csv           — pairwise selection correlation
 #
-# Output (C:/xelox_work/results/figures/bootstrap_stability/):
+# Output (/path/to/xelox_project/results/figures/bootstrap_stability/):
 #   bootstrap_selection_freq_bar.pdf    — selection frequency barplot
 #   bootstrap_coef_heatmap.pdf          — coefficient heatmap (top 20)
 #   bootstrap_stability_curve.pdf       — cumulative stability curve
 # ============================================================
 
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
-PROJECT_ROOT_XELOX <- "/path/to/xelox_project"
+PROJECT_ROOT_XELOX <- "/path/to/xelox_project基于可解释性机器学习的XELOX耐药分子指纹研究"
 RESULTS_TAB_DIR     <- file.path(PROJECT_ROOT_XELOX, "results", "tables")
 
 OUT_TAB_DIR <- file.path(PROJECT_ROOT_XELOX, "results", "tables", "bootstrap_stability")
@@ -57,7 +57,7 @@ cat("=== [0] Loading packages ===\n\n")
 required_pkgs <- c("glmnet", "pROC", "ggplot2", "data.table", "reshape2")
 
 for (pkg in required_pkgs) {
-  loaded <- require(pkg, lib.loc = "C:/Rlibs", character.only = TRUE, quietly = TRUE)
+  loaded <- require(pkg, lib.loc = "/path/to/Rlibs", character.only = TRUE, quietly = TRUE)
   if (!loaded) {
     loaded <- require(pkg, character.only = TRUE, quietly = TRUE)
   }

@@ -1,10 +1,10 @@
-library_path <- "C:/Rlibs"
+library_path <- "/path/to/Rlibs"
 .libPaths(c(library_path, .libPaths()))
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
 
 # Use scanning to skip header lines
 cat("=== Reading GPL6480 annotation with header skip ===\n")
-con <- gzfile("C:/xelox_research/data/geo/GPL6480.annot.gz", "rt")
+con <- gzfile("/path/to/xelox_project/data/geo/GPL6480.annot.gz", "rt")
 # Read until we hit the table header line (after !platform_table_begin)
 while (TRUE) {
   line <- readLines(con, n=1)
@@ -27,7 +27,7 @@ cat("\nFirst data row:\n")
 print(data[1, c("ID", "Gene.symbol", "Gene.title")])
 
 # Now check matching
-m <- readRDS("C:/xelox_research/data/geo/GSE104645_expression.rds")
+m <- readRDS("/path/to/xelox_project/data/geo/GSE104645_expression.rds")
 rns <- rownames(m)
 non_ctrl <- rns[!grepl("^\\(\\+\\)", rns)]
 
@@ -37,7 +37,7 @@ cat("Matched in first 5 rows:", sum(!is.na(idx)), "\n")
 
 # Full annot read
 cat("\nReading full annotation...\n")
-annot_full <- read.table("C:/xelox_research/data/geo/GPL6480.annot.gz", 
+annot_full <- read.table("/path/to/xelox_project/data/geo/GPL6480.annot.gz", 
   sep="\t", skip=29, header=TRUE, quote="\"", stringsAsFactors=FALSE)
 cat("Full annot rows:", nrow(annot_full), "\n")
 cat("Colnames:", paste(colnames(annot_full), collapse=" | "), "\n")

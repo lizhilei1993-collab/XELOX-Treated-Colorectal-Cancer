@@ -1,9 +1,9 @@
 # Extract all key names from GSE39582 characteristics columns
-lib_path <- "C:/Rlibs"
+lib_path <- "/path/to/Rlibs"
 .libPaths(c(lib_path, .libPaths()))
 library(GEOquery)
 
-gse <- readRDS("C:/xelox_research/data/geo/GSE39582_eset.rds")
+gse <- readRDS("/path/to/xelox_project/data/geo/GSE39582_eset.rds")
 pheno <- pData(gse)
 
 char_cols <- grep("characteristics_ch1", colnames(pheno), value = TRUE)

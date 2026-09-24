@@ -9,7 +9,7 @@ import os, re
 BASE = r'/path/to/xelox_project'
 PNG_HD = os.path.join(BASE, 'results/figures_png', 'hd')
 SUPP_PNG = os.path.join(BASE, 'results/figures_png', 'hd')
-SUPP_PDF = r'E:/tmp/output/figures'
+SUPP_PDF = r'/tmp/scratch/output/figures'
 OUT_TEX = os.path.join(BASE, 'reports', 'manuscript_v5.1_elsarticle.tex')
 
 # ── Document Preamble ──

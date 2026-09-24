@@ -21,10 +21,10 @@
 #     Model_comparison.pdf
 # ============================================================
 
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
-PROJECT_ROOT     <- "C:/xelox_research"
+PROJECT_ROOT     <- "/path/to/xelox_project"
 SCRIPT_DIR       <- file.path(PROJECT_ROOT, "scripts")
 DATA_GEO_DIR     <- file.path(PROJECT_ROOT, "data", "geo")
 DATA_TCGA_DIR    <- file.path(PROJECT_ROOT, "data", "tcga")

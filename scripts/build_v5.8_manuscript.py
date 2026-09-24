@@ -21,8 +21,8 @@ OUT_DOCX = os.path.join(BASE, 'reports', 'manuscript_draft_v5.8_submission.docx'
 MULTIFIG = os.path.join(BASE, 'results', 'figures_png', 'multifig')
 FIG_PNG_ACTIVE = os.path.join(BASE, 'results', 'figures_png')
 FIG_PDF = os.path.join(BASE, 'results', 'figures')
-TMP_FIG = r'E:/tmp/output/figures'
-TMP_TABLE = r'E:/tmp/output/tables'
+TMP_FIG = r'/tmp/scratch/output/figures'
+TMP_TABLE = r'/tmp/scratch/output/tables'
 TABLE_DIR = os.path.join(BASE, 'results', 'tables')
 
 # HD image directory (300 DPI upscaled versions)
@@ -579,16 +579,16 @@ def _get_supplementary_tables_data():
          'content': 'Direction of meta-analysis significant genes in each of 5 GEO cohorts.'},
         # S27-S30: Late-Stage Refinement
         {'id': 'Table S27', 'title': 'Fair Comparison: Gene vs Pathway LASSO-Cox',
-         'source': 'E:/tmp/output/tables/fair_comparison/fair_comparison_summary.csv',
+         'source': '/tmp/scratch/output/tables/fair_comparison/fair_comparison_summary.csv',
          'content': 'C-corrected: Gene 0.406 vs Pathway 0.489. Optimism: 0.095 vs 0.011. EPV: 1.1 vs 11.3. B=200 bootstrap.'},
         {'id': 'Table S28', 'title': 'AIC Bootstrap Selection Frequency (B=200)',
-         'source': 'E:/tmp/output/tables/nomogram/bootstrap_selection_freq.csv',
+         'source': '/tmp/scratch/output/tables/nomogram/bootstrap_selection_freq.csv',
          'content': 'Top-3: WNT (66.5%), TGF-beta Hallmark (59.0%), ECM receptor (49.0%). 45 candidate variables.'},
         {'id': 'Table S29', 'title': 'Bootstrap Coefficient Distribution (7 Pathways)',
-         'source': 'E:/tmp/output/tables/nomogram/bootstrap_coef_distribution.csv',
+         'source': '/tmp/scratch/output/tables/nomogram/bootstrap_coef_distribution.csv',
          'content': 'Original coef, bootstrap median, 95% CI, directional stability for 7 final pathways.'},
         {'id': 'Table S30', 'title': 'Drug Sensitivity Analysis (oncoPredict)',
-         'source': 'E:/tmp/output/tables/oncoPredict/drug_sensitivity_summary.csv',
+         'source': '/tmp/scratch/output/tables/oncoPredict/drug_sensitivity_summary.csv',
          'content': '5-FU p<0.0001, capecitabine p<0.0001, oxaliplatin p=0.600. GSE39582 XELOX n=164.'},
         # S31-S32: Calibration
         {'id': 'Table S31', 'title': 'Calibration Statistics',
@@ -599,14 +599,14 @@ def _get_supplementary_tables_data():
          'content': 'C-index=0.642. TDROC AUC: 12M=0.630, 36M=0.686, 60M=0.652. DCA net benefit at thresholds ~5-40%.'},
         # S33: Overfitting Diagnostics
         {'id': 'Table S33', 'title': 'Overfitting Diagnostics Summary',
-         'source': 'E:/tmp/output/tables/overfitting/overfitting_diagnostics_summary.csv',
+         'source': '/tmp/scratch/output/tables/overfitting/overfitting_diagnostics_summary.csv',
          'content': 'Comprehensive overfitting comparison between gene-level (LASSO-Cox) and pathway-level (Cox nomogram) models. Key metrics: EPV (1.1 vs 11.3), optimism (0.0945 vs 0.0110), optimism-corrected C-index (0.406 vs 0.489). Pathway aggregation reduces bootstrap optimism by 88%. See also Supplementary Table S27-S29 for the fair comparison results.'},
         # S34-S35: Ridge & Elastic Net
         {'id': 'Table S34', 'title': 'Ridge Cox Regression Coefficients (alpha = 0, lambda.min = 0.035)',
-         'source': 'E:/tmp/output/tables/overfitting/ridge_cox_summary.csv',
+         'source': '/tmp/scratch/output/tables/overfitting/ridge_cox_summary.csv',
          'content': 'Penalized Cox regression using glmnet (alpha = 0, 10-fold CV, lambda.min = 0.035). All coefficients are shrunk toward zero compared to the standard Cox model. The strongest retained effects are KEGG_ECM_RECEPTOR_INTERACTION (HR_Ridge = 1.39) and HALLMARK_TGF_BETA_SIGNALING (HR_Ridge = 1.15). KEGG_COLORECTAL_CANCER is essentially eliminated (HR_Ridge = 0.99), indicating it may be a noise variable.'},
         {'id': 'Table S35', 'title': 'Elastic Net Stability Selection (alpha = 0.5, B = 100)',
-         'source': 'E:/tmp/output/tables/overfitting/elastic_net_stability.csv',
+         'source': '/tmp/scratch/output/tables/overfitting/elastic_net_stability.csv',
          'content': 'Stability selection using Elastic Net with 100 bootstrap resamples. Variables with selection frequency >= 0.6 are considered stable. ECM receptor (100%), MYC targets (84%), tumor location (84%), WNT (75%), TGF-beta Hallmark (75%), and KEGG pathways in cancer (69%) are stable. KEGG_TGF_BETA (57%) and KEGG_COLORECTAL_CANCER (59%) are unstable, suggesting these variables may be noise-driven selections in the original AIC model.'},
     ]
 
@@ -690,13 +690,13 @@ def _get_supplementary_figures_data():
          'desc': 'Data: GSE39582 XELOX (n = 164). Five-panel analysis: gene overlap Venn diagram (HALLMARK-only 35, KEGG-only 73, shared 19), per-gene Cox forest, expression direction heatmap, score scatter plot, direction proportion bar chart.'},
         # S24-S26: Late-Stage Refinement
         {'id': 'Figure S24', 'title': 'Fair Comparison: Gene vs Pathway C-index',
-         'source': 'E:/tmp/output/figures/fair_comparison/fair_comparison_c_index.pdf',
+         'source': '/tmp/scratch/output/figures/fair_comparison/fair_comparison_c_index.pdf',
          'desc': 'Data: GSE39582 (500-gene Lasso) vs GSE39582 (44-pathway Lasso), B = 200 bootstrap. Optimism-corrected C-index: gene-level 0.406 vs pathway-level 0.489. 20% improvement from pathway aggregation as implicit regularization.'},
         {'id': 'Figure S25', 'title': 'Bootstrap Coefficient Forest (7 Pathways)',
-         'source': 'E:/tmp/output/figures/nomogram/bootstrap_coef_forest.pdf',
+         'source': '/tmp/scratch/output/figures/nomogram/bootstrap_coef_forest.pdf',
          'desc': 'Data: GSE39582 XELOX (n = 227, 79 events), B = 200 bootstrap. Original coef, bootstrap median, 95% CI forest plot. WNT/beta-catenin (100% directional stability) and KEGG TGF-beta (98.5%) dominant contributors.'},
         {'id': 'Figure S26', 'title': 'Drug Sensitivity Boxplots (oncoPredict 3-Drug Panel)',
-         'source': 'E:/tmp/output/figures/oncoPredict/*_sensitivity_boxplot.pdf',
+         'source': '/tmp/scratch/output/figures/oncoPredict/*_sensitivity_boxplot.pdf',
          'desc': 'Data: GSE39582 XELOX (n = 164). High-risk vs Low-risk groups by median pathway PRS. 5-FU p < 0.0001, capecitabine p < 0.0001; oxaliplatin p = 0.600. Confirms pathway PRS specifically captures fluoropyrimidine resistance.'},
         # S27-S29: Calibration & Clinical Utility
         {'id': 'Figure S27', 'title': 'Calibration Curve (12/36/60 Months)',
@@ -710,10 +710,10 @@ def _get_supplementary_figures_data():
          'desc': 'IPCW-based time-dependent ROC curves. AUC at each time point in Table S32.'},
         # S30-S31: Overfitting Control
         {'id': 'Figure S30', 'title': 'Ridge Cox Regression Path (alpha = 0)',
-         'source': 'E:/tmp/output/figures/overfitting/ridge_cox_path.pdf',
+         'source': '/tmp/scratch/output/figures/overfitting/ridge_cox_path.pdf',
          'desc': 'Data: GSE39582 XELOX (n = 536 complete cases after filtering time=0). Ridge coefficient path across lambda values. The dashed red line indicates lambda.min = 0.035 (10-fold CV). As lambda increases, all coefficients shrink toward zero.'},
         {'id': 'Figure S31', 'title': 'Elastic Net Stability Selection (B = 100)',
-         'source': 'E:/tmp/output/figures/overfitting/elastic_net_stability.pdf',
+         'source': '/tmp/scratch/output/figures/overfitting/elastic_net_stability.pdf',
          'desc': 'Data: GSE39582 XELOX (n = 536). Elastic Net (alpha = 0.5) stability selection with B = 100 bootstrap resamples. Dashed lines indicate stability thresholds at 0.6 and 0.8.'},
     ]
     return figs
@@ -1109,7 +1109,7 @@ def main():
     
     # ── 7. Create real supplementary tables from CSVs (key ones only) ──
     print('\n--- Creating Supplementary Tables from CSV Data ---')
-    tmp_tables_base = r'E:/tmp/output/tables'
+    tmp_tables_base = r'/tmp/scratch/output/tables'
     
     # S27: Fair Comparison
     create_three_line_table_from_csv(doc,

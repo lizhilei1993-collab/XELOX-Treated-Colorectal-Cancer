@@ -20,11 +20,11 @@
 #   figures/ml_phase2/Validation_permutation_test.pdf
 # ============================================================
 
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
 Sys.setlocale("LC_ALL", "C")
-.libPaths(c("C:/Rlibs", .libPaths()))
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
-PROJECT_ROOT     <- "C:/xelox_research"
+PROJECT_ROOT     <- "/path/to/xelox_project"
 DATA_TCGA_DIR    <- file.path(PROJECT_ROOT, "data", "tcga")
 RESULTS_TAB_DIR  <- file.path(PROJECT_ROOT, "results", "tables")
 RESULTS_FIG_DIR  <- file.path(PROJECT_ROOT, "results", "figures")

@@ -21,18 +21,18 @@
 #   data/geo/GPL570_probe_gene_map.csv          — probe-to-gene map
 #   results/tables/pathway_activity/GSE39582_gene_expression.rds
 #   results/tables/GSE39582_xelox_groups.csv    — XELOX labels
-#   C:/temp/c2.cp.kegg_legacy.v2024.1.symbols.gmt
-#   C:/temp/h.all.v2024.1.symbols.gmt
+#   /tmp/c2.cp.kegg_legacy.v2024.1.symbols.gmt
+#   /tmp/h.all.v2024.1.symbols.gmt
 #
 # Output:
 #   results/tables/prs_merged/*.csv             — model coefficients, PRS, AUC
 #   results/figures/prs_merged/*.pdf            — ROC, stability, PCA
 # ============================================================
 
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
-PROJECT_ROOT <- "C:/xelox_research"
+PROJECT_ROOT <- "/path/to/xelox_project"
 DATA_GEO_DIR <- file.path(PROJECT_ROOT, "data", "geo")
 RESULTS_TAB_DIR <- file.path(PROJECT_ROOT, "results", "tables")
 RESULTS_FIG_DIR <- file.path(PROJECT_ROOT, "results", "figures")
@@ -263,10 +263,10 @@ read_gmt <- function(gmt_file) {
   return(gs_list)
 }
 
-gmt_h <- "C:/temp/h.all.v2024.1.symbols.gmt"
-gmt_kegg <- "C:/temp/c2.cp.kegg_legacy.v2024.1.symbols.gmt"
+gmt_h <- "/tmp/h.all.v2024.1.symbols.gmt"
+gmt_kegg <- "/tmp/c2.cp.kegg_legacy.v2024.1.symbols.gmt"
 if (!file.exists(gmt_h) || !file.exists(gmt_kegg)) {
-  stop("GMT files not found at C:/temp/")
+  stop("GMT files not found at /tmp/")
 }
 
 hallmark_all <- read_gmt(gmt_h)

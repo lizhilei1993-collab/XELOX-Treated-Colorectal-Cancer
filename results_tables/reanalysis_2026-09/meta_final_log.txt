@@ -1,0 +1,15 @@
+GSE104645  genes after collapse  10945   nominal P<0.05   219   adj.P<0.05    0
+GSE28702   genes after collapse  12384   nominal P<0.05  1833   adj.P<0.05    4
+GSE72970   genes after collapse  11381   nominal P<0.05   552   adj.P<0.05    0
+GSE69657   genes after collapse  10185   nominal P<0.05  1235   adj.P<0.05    0
+GSE39582   genes after collapse  10889   nominal P<0.05  1390   adj.P<0.05    0
+
+corrected meta: 16488 genes tested, 0 at BH FDR<0.05, 2 at FDR<0.10, 927 at nominal p<0.05
+top 10 by p: PCGF5(5.3e-06) APOL6(6.3e-06) SAP30L(6.1e-05) FLT1(1.2e-04) UBE3A(1.5e-04) PAPOLA(1.8e-04) SCAPER(2.4e-04) PPP2R5C(2.9e-04) TJP1(2.9e-04) MSI2(3.1e-04)
+
+published table recomputed on its own stored p-values: 253 genes at FDR<0.05 (table's own count of significant: see deg_meta_filtered)
+overlap corrected-significant with published-significant: 0 of 0 corrected / 253 published  (Jaccard 0.000)
+  LDLRAD4  corrected z= -1.24 p=2.15e-01 fdr=1.000 | published z= -5.45 significant=yes
+  BAG5     corrected z=  2.09 p=3.65e-02 fdr=0.845 | published z=  4.70 significant=yes
+  PCGF5    corrected z= -4.55 p=5.35e-06 fdr=0.052 | published z=    NA significant=no
+  PRDM2    corrected z= -2.13 p=3.30e-02 fdr=0.844 | published z= -4.12 significant=yes

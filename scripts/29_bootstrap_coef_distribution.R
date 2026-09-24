@@ -35,7 +35,7 @@
 # ============================================================
 
 Sys.setlocale("LC_ALL", "Chinese (Simplified)_China.936")
-.libPaths(c("C:/Rlibs", .libPaths()))
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
 PROJECT <- "X:/"
 RESULTS_TAB_DIR <- file.path(PROJECT, "results", "tables")

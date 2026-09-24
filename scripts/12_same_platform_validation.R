@@ -20,12 +20,12 @@
 #   figures/GSE72970_direction_concordance.pdf
 # ============================================================
 
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
 # Accept PROJECT_ROOT from environment variable (avoids Chinese path issues on cmd line)
 PROJECT_ROOT <- Sys.getenv("XELOX_ROOT",
-  "/path/to/xelox_project")
+  "/path/to/xelox_project基于可解释性机器学习的XELOX耐药分子指纹研究")
 
 # Set locale AFTER defining paths (env var approach avoids Chinese char in cmd arg)
 if (.Platform$OS.type == "windows") {

@@ -1,8 +1,8 @@
 
-.libPaths(c("C:/Rlibs", .libPaths()))
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 suppressPackageStartupMessages(library(survival))
 options(warn = -1)
-IN <- "C:/xelox_reanalysis/input"
+IN <- "/path/to/xelox_reanalysis/input"
 say <- function(...) cat(paste0(...), "\n", sep = "")
 
 cidx <- function(s, t, e) {

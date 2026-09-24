@@ -10,11 +10,11 @@
 #   Rscript scripts/07_enrichment_analysis.R
 # ============================================================
 
-Sys.setenv(HOME = "C:/temp", TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp", R_LIBS = "C:/Rlibs")
+Sys.setenv(HOME = "/tmp", TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp", R_LIBS = "/path/to/Rlibs")
 Sys.setlocale("LC_ALL", "C")
-.libPaths(c("C:/Rlibs", .libPaths()))
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
-PROJECT_ROOT     <- "/path/to/xelox_project"
+PROJECT_ROOT     <- "/path/to/xelox_project基于可解释性机器学习的XELOX耐药分子指纹研究"
 SCRIPT_DIR       <- file.path(PROJECT_ROOT, "scripts")
 DATA_GEO_DIR     <- file.path(PROJECT_ROOT, "data", "geo")
 DATA_PROC_DIR    <- file.path(PROJECT_ROOT, "data", "processed")

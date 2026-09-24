@@ -2,13 +2,13 @@
 # 01_GEO_DATA_PIPELINE.R
 # XELOX Resistance Study - GEO Data Download and Preprocessing
 # ============================================================
-# NOTE: Uses C:/xelox_research as project root (ASCII path
+# NOTE: Uses /path/to/xelox_project as project root (ASCII path
 # to avoid Chinese character encoding issues in R on Windows)
 
 # --- 0. Environment Setup ---
-lib_path <- "C:/Rlibs"
+lib_path <- "/path/to/Rlibs"
 .libPaths(c(lib_path, .libPaths()))
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
 
 library(GEOquery)
 library(limma)
@@ -18,7 +18,7 @@ library(WGCNA)
 library(BiocManager)
 
 # Project paths - use ASCII junction to avoid Chinese path issues
-PROJECT_ROOT <- "C:/xelox_research"
+PROJECT_ROOT <- "/path/to/xelox_project"
 DATA_GEO_DIR  <- file.path(PROJECT_ROOT, "data", "geo")
 DATA_PROC_DIR <- file.path(PROJECT_ROOT, "data", "processed")
 RESULTS_TAB_DIR <- file.path(PROJECT_ROOT, "results", "tables")

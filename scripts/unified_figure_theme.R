@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
-.libPaths(c('C:/tmp/rlib', .libPaths()))
+.libPaths(c('/tmp/rlib', .libPaths()))
 library(ggplot2)
 # Unified ggplot2 theme for publication figures
 # Run this BEFORE generating any figure:

@@ -5,10 +5,10 @@
 #   - Brier score via rms::val.surv or manual computation
 # ============================================================
 
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
-PROJECT_ROOT <- "/path/to/xelox_project"
+PROJECT_ROOT <- "/path/to/xelox_project基于可解释性机器学习的XELOX耐药分子指纹研究"
 NOMO_TAB_DIR <- file.path(PROJECT_ROOT, "results", "tables", "nomogram")
 PA_DIR       <- file.path(PROJECT_ROOT, "results", "tables", "pathway_activity")
 

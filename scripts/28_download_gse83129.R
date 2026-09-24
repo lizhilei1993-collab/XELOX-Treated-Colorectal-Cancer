@@ -1,9 +1,9 @@
 # 28_download_gse83129.R
 # 下载 GSE83129 (GPL6244, 26例 oxaliplatin, 9R/17S)
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
-PROJECT_ROOT <- "C:/xelox_research"
+PROJECT_ROOT <- "/path/to/xelox_project"
 GEO_DIR <- file.path(PROJECT_ROOT, "data", "geo")
 
 library(GEOquery)

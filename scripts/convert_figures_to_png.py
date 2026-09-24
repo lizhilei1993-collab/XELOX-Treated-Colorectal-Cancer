@@ -72,7 +72,7 @@ prs_files = {
 }
 alt_prs_dir = r"C:\xelox_work\results\figures\prs"
 for src_name, dst_name in prs_files.items():
-    # Try project dir first, then fallback to C:/xelox_work
+    # Try project dir first, then fallback to /path/to/xelox_project
     src_path = os.path.join(PRS_SRC, src_name)
     if not os.path.exists(src_path):
         alt_path = os.path.join(alt_prs_dir, src_name)

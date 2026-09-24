@@ -1,0 +1,7 @@
+published table: 25568 rows, 17517 with a finite stouffer_z
+equal             median|diff|=  0.2237  r=0.973505  reproduced 431/17517
+sqrt_n_used       median|diff|=  0.0000  r=1.000000  reproduced 17517/17517
+sqrt_n_published  median|diff|=  0.2275  r=0.969941  reproduced 445/17517
+n_used            median|diff|=  0.1503  r=0.987612  reproduced 617/17517
+n_published       median|diff|=  0.4840  r=0.862311  reproduced 172/17517
+CHOSEN weighting: sqrt_n_used (reproduces 17517/17517 within 0.01)

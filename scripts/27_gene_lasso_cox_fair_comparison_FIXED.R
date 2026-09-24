@@ -44,8 +44,8 @@
 # ============================================================
 
 # Windows TEMP can sit under a CJK user profile; HDF5Array/GSVA fail there.
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 suppressPackageStartupMessages({ library(survival); library(glmnet) })
 options(warn = -1)
 set.seed(42)

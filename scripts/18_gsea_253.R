@@ -6,15 +6,15 @@
 # XELOX Resistance Study
 # ============================================================
 
-Sys.setenv(HOME = "C:/temp", TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp",
-           R_LIBS_USER = "C:/Rlibs",
-           R_USER_CACHE_DIR = "C:/temp/Rcache")
+Sys.setenv(HOME = "/tmp", TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp",
+           R_LIBS_USER = "/path/to/Rlibs",
+           R_USER_CACHE_DIR = "/tmp/Rcache")
 suppressWarnings(Sys.setlocale("LC_ALL", "C"))
-.libPaths(c("C:/Rlibs", .libPaths()))
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
-TEMP_INPUT      <- "C:/temp/xelox_input/deg_meta_results.csv"
-ENRICH_DIR      <- "C:/temp/xelox_output/tables"
-FIG_DIR         <- "C:/temp/xelox_output/figures"
+TEMP_INPUT      <- "/tmp/xelox_input/deg_meta_results.csv"
+ENRICH_DIR      <- "/tmp/xelox_output/tables"
+FIG_DIR         <- "/tmp/xelox_output/figures"
 
 dir.create(ENRICH_DIR, showWarnings = FALSE, recursive = TRUE)
 dir.create(FIG_DIR, showWarnings = FALSE, recursive = TRUE)
@@ -128,7 +128,7 @@ cat(sprintf("  kegg_category.rda: %s\n",
 # ============================================================
 cat("=== [4] Loading cached KEGG data ===\n\n")
 
-KEGG_CACHE_DIR <- "C:/temp/tcga_review"
+KEGG_CACHE_DIR <- "/tmp/tcga_review"
 kegg_link_file <- file.path(KEGG_CACHE_DIR, "kegg_link_hsa_pathway.txt")
 kegg_list_file <- file.path(KEGG_CACHE_DIR, "kegg_list_pathway_hsa.txt")
 kegg_conv_file <- file.path(KEGG_CACHE_DIR, "kegg_conv_ncbi_hsa.txt")
@@ -276,7 +276,7 @@ read_gmt_simple <- function(file) {
 # ============================================================
 cat("=== [7] GSEA: MSigDB Hallmark ===\n\n")
 
-GMT_HALLMARK <- "C:/temp/h.all.v2024.1.symbols.gmt"
+GMT_HALLMARK <- "/tmp/h.all.v2024.1.symbols.gmt"
 h_gmt <- tryCatch({
   read_gmt_simple(GMT_HALLMARK)
 }, error = function(e) {
@@ -339,7 +339,7 @@ cat("\n")
 # ============================================================
 cat("=== [8] GSEA: MSigDB C2 (CP:KEGG_legacy) ===\n\n")
 
-GMT_C2 <- "C:/temp/c2.cp.kegg_legacy.v2024.1.symbols.gmt"
+GMT_C2 <- "/tmp/c2.cp.kegg_legacy.v2024.1.symbols.gmt"
 c2_gmt <- tryCatch({
   read_gmt_simple(GMT_C2)
 }, error = function(e) {

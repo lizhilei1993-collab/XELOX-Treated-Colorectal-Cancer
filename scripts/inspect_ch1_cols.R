@@ -1,9 +1,9 @@
 # Compare :ch1 columns vs characteristics columns
-lib_path <- "C:/Rlibs"
+lib_path <- "/path/to/Rlibs"
 .libPaths(c(lib_path, .libPaths()))
 library(GEOquery)
 
-gse <- readRDS("C:/xelox_research/data/geo/GSE39582_eset.rds")
+gse <- readRDS("/path/to/xelox_project/data/geo/GSE39582_eset.rds")
 pheno <- pData(gse)
 
 # Check what :ch1 columns contain (just values, no key prefix?)

@@ -1,10 +1,10 @@
 #!/usr/bin/env Rscript
 # Regenerate all figures - uses ASCII paths only
-.libPaths(c('C:/tmp/rlib', .libPaths()))
+.libPaths(c('/tmp/rlib', .libPaths()))
 library(ggplot2)
 
-OUT_DIR <- "C:/tmp/fig_new"
-DATA <- "E:/tmp/fig_regen"
+OUT_DIR <- "/tmp/fig_new"
+DATA <- "/tmp/scratch/fig_regen"
 dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)
 
 # Inline theme definition (avoids Chinese path source issue)

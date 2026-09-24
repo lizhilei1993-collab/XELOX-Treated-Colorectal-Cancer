@@ -16,7 +16,7 @@ from statsmodels.stats.multitest import multipletests
 import warnings
 warnings.filterwarnings('ignore')
 
-PROJECT = r"/path/to/xelox_project"
+PROJECT = r"/path/to/xelox_project基于可解释性机器学习的XELOX耐药分子指纹研究"
 OUT_DIR = os.path.join(PROJECT, "results", "tables", "tgfb_paradox")
 FIG_DIR = os.path.join(PROJECT, "results", "figures", "tgfb_paradox")
 os.makedirs(OUT_DIR, exist_ok=True)

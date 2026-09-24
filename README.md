@@ -184,3 +184,29 @@ and required to reproduce the TCGA analyses.
 
 Machine-specific absolute paths were replaced by `/path/to/xelox_project` and
 `/home/user` before release, so set `PROJECT_ROOT` accordingly before running.
+
+## v2.1 (2026-09-24): the corrected run is now part of the deposit
+
+The repository previously carried only the May-2026 pipeline, so a reviewer could
+not reproduce the gene-level numbers the manuscript now reports. This revision
+publishes the corrected analysis alongside the original:
+
+| path | what it is |
+|---|---|
+| `scripts/reanalysis/rerun_deg3.R` | per-cohort limma re-run with GSE28702 and GSE69657 log2(x+1)-transformed, `annotate_*` group definitions copied verbatim from `02_extract_xelox_groups.R` |
+| `scripts/reanalysis/meta_final.R`, `meta_export.R`, `meta_calibrate.R`, `sig9_table.R` | Stouffer recombination weighted by sqrt(n analysed per cohort), BH correction, SI Table S1 export, nine-gene table |
+| `results_tables/reanalysis_2026-09/deg_meta_corrected_noIQRfilter.csv` | **the table behind the manuscript**: 9 genes at `stouffer_fdr < 0.05` (LDLRAD4, PRDM2, PCGF5, BAG5, APOL6, STON2, WDFY3, SLC25A28, KIAA1257) |
+| `results_tables/reanalysis_2026-09/deg_meta_corrected_IQRfiltered.csv` | same run with the IQR probe filter additionally applied: 0 genes at FDR < 0.05, smallest q = 0.052 |
+| `results_tables/reanalysis_2026-09/s1_*.csv`, `signature_9_percohort.csv` | Supplementary Table S1 direction matrix, per-cohort effect sizes and the nine-gene per-cohort table |
+| `results_tables/reanalysis_2026-09/agg_lasso_nested.csv`, `complexity_matched_nested.csv`, `perfold_*.csv` | nested cross-validation and complexity-matched comparison behind 0.0704 vs 0.3671, the 81 % figure and Figure 5 |
+| `results_tables/reanalysis_2026-09/external_validation_TCGA.csv` | frozen-nomogram TCGA validation (C-index 0.451, calibration slope -0.450) |
+| `results_tables/reanalysis_2026-09/*_log.txt` | run logs of the above, with input sizes and timestamps |
+| `results_tables/_superseded/deg_meta_results_pre_log2fix.csv` | the pre-correction meta-analysis (253 genes); referenced in the manuscript only as the superseded count |
+
+`scripts/03_deg_analysis.R` keeps its original behaviour and carries a STATUS
+note saying which two defects make it inconsistent with the manuscript, so the
+historical pipeline and the reported numbers stay distinguishable.
+
+Machine-specific absolute paths in this revision were again normalised to
+`/path/to/xelox_project`, `/path/to/xelox_reanalysis`, `/path/to/Rlibs`, `/tmp`
+and `/home/user`; result tables were not rewritten.

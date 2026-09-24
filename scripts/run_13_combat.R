@@ -1,11 +1,11 @@
 # ============================================================
 # run_13_combat.R - Wrapper for ComBat batch correction (v6.0 fix)
 # Core fix: Drop NA samples instead of filling with 0.5
-# Reads from C:/xelox_research, prints results to stdout
+# Reads from /path/to/xelox_project, prints results to stdout
 # ============================================================
 
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 if (.Platform$OS.type == "windows") {
   tryCatch(Sys.setlocale("LC_ALL", "Chinese"), error = function(e) {
     tryCatch(Sys.setlocale("LC_ALL", "chs"), error = function(e2) {})
@@ -18,7 +18,7 @@ suppressPackageStartupMessages({
   library(limma)
 })
 
-READ_ROOT <- "C:/xelox_research"
+READ_ROOT <- "/path/to/xelox_project"
 DATA_GEO_DIR <- file.path(READ_ROOT, "data", "geo")
 READ_TAB_DIR <- file.path(READ_ROOT, "results", "tables")
 

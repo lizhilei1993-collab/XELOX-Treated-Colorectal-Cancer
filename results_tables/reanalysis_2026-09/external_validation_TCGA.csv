@@ -1,0 +1,4 @@
+"Analysis","n","Events","C_index","Comparable_pairs","HR_per_SD","CI_low","CI_high","p","Calib_slope","Logrank_p","AUC_1y","AUC_3y","AUC_5y"
+"Frozen score",613,122,0.451,44633,0.846,0.704,1.017,0.075,-0.45,0.228,0.466,0.467,0.484
+"Score without location",613,122,0.5215,44633,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Tumor location alone",482,100,0.4198,29341,NA,NA,NA,NA,NA,NA,NA,NA,NA

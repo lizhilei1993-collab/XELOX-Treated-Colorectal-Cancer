@@ -25,11 +25,11 @@
 #   results/figures/gene_level/forest_plot_gene_cox.pdf
 # ============================================================
 
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
 PROJECT_ROOT <- Sys.getenv("XELOX_ROOT",
-  "/path/to/xelox_project")
+  "/path/to/xelox_project基于可解释性机器学习的XELOX耐药分子指纹研究")
 
 RESULTS_TAB_DIR <- file.path(PROJECT_ROOT, "results", "tables")
 RESULTS_FIG_DIR <- file.path(PROJECT_ROOT, "results", "figures")

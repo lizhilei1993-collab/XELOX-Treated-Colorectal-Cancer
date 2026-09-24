@@ -1,8 +1,8 @@
-library_path <- "C:/Rlibs"
+library_path <- "/path/to/Rlibs"
 .libPaths(c(library_path, .libPaths()))
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
 
-m <- readRDS("C:/xelox_research/data/geo/GSE104645_expression.rds")
+m <- readRDS("/path/to/xelox_project/data/geo/GSE104645_expression.rds")
 rns <- rownames(m)
 cat("Total rows:", length(rns), "\n")
 
@@ -13,7 +13,7 @@ cat("First 15 non-control:", paste(non_ctrl[1:15], collapse=", "), "\n\n")
 
 # Check if they match GPL6480 annotation
 cat("=== Loading GPL6480 annotation ===\n")
-annot <- read.table("C:/xelox_research/data/geo/GPL6480.annot.gz", 
+annot <- read.table("/path/to/xelox_project/data/geo/GPL6480.annot.gz", 
   header=TRUE, sep="\t", comment.char="!", quote="\"", stringsAsFactors=FALSE)
 cat("GPL6480 annot rows:", nrow(annot), "\n")
 cat("GPL6480 annot first probe IDs:", paste(annot$ID[1:10], collapse=", "), "\n\n")
@@ -29,7 +29,7 @@ cat("Unique gene symbols from matched probes:", length(unique(matched_genes[matc
 
 # Also check GSE39582
 cat("\n=== GSE39582 ===\n")
-e <- readRDS("C:/xelox_research/data/geo/GSE39582_eset.rds")
+e <- readRDS("/path/to/xelox_project/data/geo/GSE39582_eset.rds")
 cat("Class:", class(e), "\n")
 require(Biobase, quietly=TRUE, lib.loc=library_path)
 mat <- exprs(e)

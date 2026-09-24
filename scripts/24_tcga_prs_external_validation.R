@@ -25,24 +25,24 @@
 #   GSE39582_pathway_scores.rds           — training ssGSEA scores (mean/sd)
 #   GSE104645_pathway_scores.rds          — training ssGSEA scores (mean/sd)
 #
-# Output (C:/xelox_work/results/tables/tcga_validation/):
+# Output (/path/to/xelox_project/results/tables/tcga_validation/):
 #   tcga_prs_scores.csv           — PRS scores for all TCGA samples
 #   tcga_oxali_analysis_set.csv   — Final analysis set with PRS + survival
 #   tcga_cox_results.csv          — Cox regression summary
 #   tcga_cox_multivariable.csv    — Multivariable Cox summary
 #
-# Output (C:/xelox_work/results/figures/tcga_validation/):
+# Output (/path/to/xelox_project/results/figures/tcga_validation/):
 #   tcga_km_os.pdf                — KM curve (OS, PRS median split)
 #   tcga_km_dss.pdf               — KM curve (DSS, PRS median split)
 #   tcga_roc_1yr.pdf / 3yr / 5yr — Time-dependent ROC
 #   tcga_prs_boxplot.pdf          — PRS distribution
 # ============================================================
 
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
-PROJECT_ROOT_XELOX <- "/path/to/xelox_project"
-TCGA_DATA_DIR      <- "C:/xelox_research/data/tcga"
+PROJECT_ROOT_XELOX <- "/path/to/xelox_project基于可解释性机器学习的XELOX耐药分子指纹研究"
+TCGA_DATA_DIR      <- "/path/to/xelox_project/data/tcga"
 
 OUT_TAB_DIR <- file.path(PROJECT_ROOT_XELOX, "results", "tables", "tcga_validation")
 OUT_FIG_DIR <- file.path(PROJECT_ROOT_XELOX, "results", "figures", "tcga_validation")
@@ -66,7 +66,7 @@ required_pkgs <- c("GSVA", "GSEABase", "survival", "survminer",
                     "ggplot2", "pROC", "timeROC", "data.table")
 
 for (pkg in required_pkgs) {
-  loaded <- require(pkg, lib.loc = "C:/Rlibs", character.only = TRUE, quietly = TRUE)
+  loaded <- require(pkg, lib.loc = "/path/to/Rlibs", character.only = TRUE, quietly = TRUE)
   if (!loaded) {
     cat(sprintf("  WARNING: %s not loaded, trying default library...\n", pkg))
     loaded <- require(pkg, character.only = TRUE, quietly = TRUE)
@@ -106,7 +106,7 @@ cat(sprintf("\n  PRS formula = %.4f\u00d7Z(%s) %+.4f\u00d7Z(%s) %+.4f\u00d7Z(%s)
 # ============================================================
 cat("\n=== [2] Loading KEGG pathway gene sets ===\n\n")
 
-gmt_file <- "C:/temp/c2.cp.kegg_legacy.v2024.1.symbols.gmt"
+gmt_file <- "/tmp/c2.cp.kegg_legacy.v2024.1.symbols.gmt"
 if (!file.exists(gmt_file)) {
   stop("GMT file not found: ", gmt_file)
 }

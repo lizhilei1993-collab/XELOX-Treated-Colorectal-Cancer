@@ -3,7 +3,7 @@ import pyreadr
 import pandas as pd
 import os
 
-PROJECT = r"/path/to/xelox_project"
+PROJECT = r"/path/to/xelox_project基于可解释性机器学习的XELOX耐药分子指纹研究"
 
 files = [
     (os.path.join(PROJECT, "results", "tables", "pathway_activity", "GSE39582_pathway_scores.rds"),

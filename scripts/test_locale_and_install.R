@@ -1,6 +1,6 @@
 # Test fixing locale and installing HDO.db
-Sys.setenv(HOME = "C:/temp")
-Sys.setenv(TMPDIR = "C:/temp")
+Sys.setenv(HOME = "/tmp")
+Sys.setenv(TMPDIR = "/tmp")
 
 # Fix locale - try several options
 locales <- c(
@@ -14,13 +14,13 @@ cat("HOME:", Sys.getenv("HOME"), "\n")
 cat("TMPDIR:", Sys.getenv("TMPDIR"), "\n")
 cat("tempdir():", tempdir(), "\n")
 
-.libPaths(c("C:/Rlibs", .libPaths()))
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
 # Try to install HDO.db
 cat("\n=== Installing HDO.db ===\n")
 if (requireNamespace("BiocManager", quietly=TRUE)) {
   result <- tryCatch({
-    BiocManager::install("HDO.db", lib="C:/Rlibs", ask=FALSE, update=FALSE)
+    BiocManager::install("HDO.db", lib="/path/to/Rlibs", ask=FALSE, update=FALSE)
     "SUCCESS"
   }, error = function(e) {
     paste("FAILED:", conditionMessage(e))

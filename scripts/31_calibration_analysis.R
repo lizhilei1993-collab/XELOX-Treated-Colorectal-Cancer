@@ -6,7 +6,7 @@
 # Fix: uses GSE39582_xelox_groups.csv instead of raw clinical data
 # ============================================================
 
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
 .libPaths(c("/home/user/AppData/Local/Temp/R_libs", .libPaths()))
 
 PROJECT_ROOT <- Sys.getenv("XELOX_ROOT",

@@ -1,17 +1,29 @@
 # ============================================================
 # 03_DEG_ANALYSIS.R
+# ------------------------------------------------------------
+# STATUS (2026-09-24): superseded for the reported numbers.
+#   * Line ~64 asserted "Microarray data is already log2-transformed"; that is
+#     false for GSE28702 and GSE69657, whose series matrices are on a linear
+#     scale. limma was therefore fitted on mixed scales in this run.
+#   * The IQR probe filter below (added 2026-06-02) was never applied to the
+#     tables shipped with the manuscript, and applying it leaves no gene at
+#     FDR < 0.05. The manuscript states this explicitly.
+# The corrected run is scripts/reanalysis/rerun_deg3.R + meta_final.R; its
+# outputs are in results_tables/reanalysis_2026-09/ and they are what the
+# paper reports (nine genes at Stouffer FDR < 0.05, not the 253 of this run).
+# ------------------------------------------------------------
 # DEG analysis - limma for microarray data across GEO datasets
 # XELOX Resistance Study
 # ============================================================
 
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
 library(limma)
 library(WGCNA)
 library(GEOquery)
 
-PROJECT_ROOT <- "C:/xelox_research"
+PROJECT_ROOT <- "/path/to/xelox_project"
 DATA_GEO_DIR  <- file.path(PROJECT_ROOT, "data", "geo")
 DATA_PROC_DIR <- file.path(PROJECT_ROOT, "data", "processed")
 RESULTS_TAB_DIR <- file.path(PROJECT_ROOT, "results", "tables")

@@ -14,11 +14,11 @@
 # Output: results/tables/ml_phase2/  &  results/figures/ml_phase2/
 # ============================================================
 
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
 Sys.setlocale("LC_ALL", "C")
-.libPaths(c("C:/Rlibs", .libPaths()))
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
-PROJECT_ROOT     <- "C:/xelox_research"
+PROJECT_ROOT     <- "/path/to/xelox_project"
 DATA_GEO_DIR     <- file.path(PROJECT_ROOT, "data", "geo")
 DATA_TCGA_DIR    <- file.path(PROJECT_ROOT, "data", "tcga")
 DATA_PROC_DIR    <- file.path(PROJECT_ROOT, "data", "processed")

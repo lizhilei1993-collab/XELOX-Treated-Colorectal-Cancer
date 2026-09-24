@@ -690,9 +690,9 @@ def fig4():
 # ════════════════ FIGURE 5: FAIR COMPARISON ════════════════
 def fig5():
     print('\n[5/7] Fair comparison...')
-    fair = pd.read_csv(r'E:\tmp\output\tables\fair_comparison\fair_comparison_summary.csv')
-    gene_lasso = pd.read_csv(r'E:\tmp\output\tables\fair_comparison\gene_lasso_cox_results.csv')
-    path_lasso = pd.read_csv(r'E:\tmp\output\tables\fair_comparison\pathway_lasso_cox_results.csv')
+    fair = pd.read_csv(r'/tmp/scratch\output\tables\fair_comparison\fair_comparison_summary.csv')
+    gene_lasso = pd.read_csv(r'/tmp/scratch\output\tables\fair_comparison\gene_lasso_cox_results.csv')
+    path_lasso = pd.read_csv(r'/tmp/scratch\output\tables\fair_comparison\pathway_lasso_cox_results.csv')
 
     fig = plt.figure(figsize=(W_INCH + 0.3, 3.5))
     gs = fig.add_gridspec(1, 2, wspace=0.5, left=0.08, right=0.98)

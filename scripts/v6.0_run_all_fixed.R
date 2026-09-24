@@ -6,8 +6,8 @@
 # Solution: Set locale to Chinese first, then source scripts.
 # ============================================================
 
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
 # Fix locale for Chinese paths
 if (.Platform$OS.type == "windows") {
@@ -19,7 +19,7 @@ if (.Platform$OS.type == "windows") {
 }
 cat(sprintf("Locale: %s\n", Sys.getlocale("LC_ALL")))
 
-PROJECT_ROOT <- "E:/基于~1"
+PROJECT_ROOT <- "/path/to/基于~1"
 cat(sprintf("Project root: %s\n", PROJECT_ROOT))
 cat(sprintf("Exists: %s\n", file.exists(PROJECT_ROOT)))
 
@@ -58,8 +58,8 @@ if (!all_ok) {
     } else {
       cat("  Project root does NOT exist either\n")
       # Try E: drive root
-      cat("  E:/ contents:\n")
-      cat(paste("  ", list.files("E:/"), collapse = "\n"), "\n")
+      cat("  /path/to/ contents:\n")
+      cat(paste("  ", list.files("/path/to/"), collapse = "\n"), "\n")
     }
   }
   quit(status = 1)

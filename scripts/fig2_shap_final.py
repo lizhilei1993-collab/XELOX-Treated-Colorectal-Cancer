@@ -16,7 +16,7 @@ import xgboost as xgb
 # Paths
 BASE = r'/path/to/xelox_project'
 MODEL_PATH = os.path.join(BASE, 'results/tables/ml_phase2/XGBoost_model_phase2.xgb')
-TRAIN_CSV = r'E:\tmp\training_shap_data.csv'
+TRAIN_CSV = r'/tmp/scratch\training_shap_data.csv'
 OUT_DIR = os.path.join(BASE, 'results/figures_png/v5.11')
 os.makedirs(OUT_DIR, exist_ok=True)
 

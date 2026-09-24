@@ -1,0 +1,8 @@
+genes exported          : 23121
+signature (FDR<0.05)    : 9  -> LDLRAD4, PRDM2, PCGF5, BAG5, APOL6, STON2, WDFY3, SLC25A28, KIAA1257
+  up 3 / down 6 ; |z| range 4.31-4.79
+  concordant in 5/5     : 8 ; in 4/5 : 1
+max |logfc| anywhere    : 2.054  (was >400 in the unrepaired linear-scale cohorts)
+rows with any |logfc|>5 : 0  (was 3,895 in the published S1)
+direction matrix rows   : 23121
+wrote s1_meta_all_genes.csv, s1_meta_signature.csv, s1_direction_matrix.csv to /path/to/xelox_reanalysis/meta_nofilt/

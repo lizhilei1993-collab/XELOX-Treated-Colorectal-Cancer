@@ -30,11 +30,11 @@
 #   results/figures/oncoPredict/
 # ============================================================
 
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
 tryCatch(Sys.setlocale("LC_ALL", "Chinese"), error = function(e) {})
-.libPaths(c("C:/Rlibs", .libPaths()))
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
-PROJECT <- "C:/xelox_research"
+PROJECT <- "/path/to/xelox_project"
 RESULTS_TAB_DIR <- file.path(PROJECT, "results", "tables")
 RESULTS_FIG_DIR <- file.path(PROJECT, "results", "figures")
 OUT_TAB_DIR <- file.path(RESULTS_TAB_DIR, "oncoPredict")

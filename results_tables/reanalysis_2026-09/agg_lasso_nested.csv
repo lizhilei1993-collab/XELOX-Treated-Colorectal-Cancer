@@ -1,0 +1,5 @@
+"Arm","Lambda","C_train_mean","C_test_mean","C_test_SE","Nested_optimism","C_test_median","mean_n_sel","pct_null_folds","mean_cal_slope","n_folds"
+"Gene_500","lambda.1se",0.5316,0.5006,0.0034,0.031,0.5,3.6,0.92,0.0597,25
+"Pathway_44","lambda.1se",0.5,0.5,0,0,0.5,0,1,NA,25
+"Gene_500","lambda.min",0.8748,0.5078,0.0132,0.3671,0.5,56.16,0.08,-0.1783,25
+"Pathway_44","lambda.min",0.6251,0.5547,0.0106,0.0704,0.5559,4.84,0.16,0.9601,25

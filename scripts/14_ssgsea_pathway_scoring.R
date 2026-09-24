@@ -5,16 +5,16 @@
 #      + GSE39582 (secondary validation, RFS endpoint)
 # ============================================================
 
-lib_path <- "C:/Rlibs"
+lib_path <- "/path/to/Rlibs"
 .libPaths(c(lib_path, .libPaths()))
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
 
 require(GSVA, lib.loc = lib_path, quietly = TRUE)
 require(GSEABase, lib.loc = lib_path, quietly = TRUE)
 require(Biobase, lib.loc = lib_path, quietly = TRUE)
 require(data.table, lib.loc = lib_path, quietly = TRUE)
 
-PROJECT_ROOT <- "/path/to/xelox_project"
+PROJECT_ROOT <- "/path/to/xelox_project基于可解释性机器学习的XELOX耐药分子指纹研究"
 DATA_GEO_DIR <- file.path(PROJECT_ROOT, "data", "geo")
 DATA_PROC_DIR <- file.path(PROJECT_ROOT, "data", "processed")
 RESULTS_TAB_DIR <- file.path(PROJECT_ROOT, "results", "tables")
@@ -44,11 +44,11 @@ read_gmt <- function(gmt_file) {
 }
 
 # Paths to downloaded GMT files
-gmt_h <- "C:/temp/h.all.v2024.1.symbols.gmt"
-gmt_kegg <- "C:/temp/c2.cp.kegg_legacy.v2024.1.symbols.gmt"
+gmt_h <- "/tmp/h.all.v2024.1.symbols.gmt"
+gmt_kegg <- "/tmp/c2.cp.kegg_legacy.v2024.1.symbols.gmt"
 
 if (!file.exists(gmt_h) || !file.exists(gmt_kegg)) {
-  stop("GMT files not found at C:/temp/. Download them first.")
+  stop("GMT files not found at /tmp/. Download them first.")
 }
 
 hallmark_all <- read_gmt(gmt_h)

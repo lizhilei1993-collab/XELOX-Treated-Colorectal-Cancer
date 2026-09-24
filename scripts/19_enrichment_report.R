@@ -4,13 +4,13 @@
 # XELOX Resistance Study - 253-Meta Analysis
 # ============================================================
 
-Sys.setenv(HOME = "C:/temp", TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp",
-           R_LIBS_USER = "C:/Rlibs")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(HOME = "/tmp", TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp",
+           R_LIBS_USER = "/path/to/Rlibs")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
-TABLES_DIR   <- "C:/temp/xelox_output/tables"
-FIGURES_DIR  <- "C:/temp/xelox_output/figures"
-REPORT_DIR   <- "C:/temp/xelox_output/report"
+TABLES_DIR   <- "/tmp/xelox_output/tables"
+FIGURES_DIR  <- "/tmp/xelox_output/figures"
+REPORT_DIR   <- "/tmp/xelox_output/report"
 dir.create(REPORT_DIR, showWarnings = FALSE, recursive = TRUE)
 
 OUTPUT_HTML  <- file.path(REPORT_DIR, "XELOX_ORA_GSEA_Report.html")
@@ -34,12 +34,12 @@ cat("============================================================\n\n")
 pdf_to_base64_png <- function(pdf_path) {
   if (!file.exists(pdf_path)) return(NA_character_)
   
-  png_tmp <- file.path("C:/temp", paste0(gsub("[^A-Za-z0-9]", "", basename(pdf_path)), ".png"))
-  bat_tmp <- "C:/temp/_pdf_convert.bat"
+  png_tmp <- file.path("/tmp", paste0(gsub("[^A-Za-z0-9]", "", basename(pdf_path)), ".png"))
+  bat_tmp <- "/tmp/_pdf_convert.bat"
   
   # Write a .bat file (avoids Chinese chars in system() call)
   python_exe <- "/home/user/AppData/Local/Programs/Python/Python314/python.exe"
-  helper_py  <- "C:/temp/pdf_to_png.py"
+  helper_py  <- "/tmp/pdf_to_png.py"
   bat_lines <- sprintf('@"%s" "%s" "%s" "%s"\n', python_exe, helper_py,
                        gsub("/", "\\\\", pdf_path),
                        gsub("/", "\\\\", png_tmp))

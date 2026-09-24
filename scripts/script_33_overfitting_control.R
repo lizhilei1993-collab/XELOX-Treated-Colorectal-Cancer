@@ -9,12 +9,12 @@
 #   install.packages(c('coxphf', 'glmnet', 'rms', 'boot', 'ggplot2', 'dplyr', 'tidyr'))
 #
 # Usage:
-#   TMPDIR=C:/tmp TEMP=C:/tmp TMP=C:/tmp Rscript script_33_overfitting_control.R
+#   TMPDIR=/tmp TEMP=/tmp TMP=/tmp Rscript script_33_overfitting_control.R
 #
 # ============================================================
 
 # Load package library path (avoid Chinese-char temp dir issues)
-.libPaths(c('C:/tmp/rlib', .libPaths()))
+.libPaths(c('/tmp/rlib', .libPaths()))
 # Inputs:
 #   - results/tables/pathway_activity/GSE39582_pathway_scores.*
 #   - results/tables/nomogram/cox_final_results.csv
@@ -22,16 +22,16 @@
 #   - results/tables/nomogram_sensitivity/bootstrap_cindex_ci.csv
 #
 # Outputs:
-#   - E:/tmp/output/tables/overfitting/firth_correction.csv
-#   - E:/tmp/output/tables/overfitting/ridge_cox_summary.csv
-#   - E:/tmp/output/tables/overfitting/elastic_net_stability.csv
-#   - E:/tmp/output/tables/overfitting/overfitting_diagnostics_summary.csv
-#   - E:/tmp/output/figures/overfitting/*.pdf
+#   - /tmp/scratch/output/tables/overfitting/firth_correction.csv
+#   - /tmp/scratch/output/tables/overfitting/ridge_cox_summary.csv
+#   - /tmp/scratch/output/tables/overfitting/elastic_net_stability.csv
+#   - /tmp/scratch/output/tables/overfitting/overfitting_diagnostics_summary.csv
+#   - /tmp/scratch/output/figures/overfitting/*.pdf
 # ============================================================
 
 # ---- Path Setup ----
 base_dir <- "/path/to/xelox_project"
-tmp_dir <- "E:/tmp/output"
+tmp_dir <- "/tmp/scratch/output"
 out_table <- file.path(tmp_dir, "tables", "overfitting")
 out_fig <- file.path(tmp_dir, "figures", "overfitting")
 dir.create(out_table, recursive = TRUE, showWarnings = FALSE)
@@ -41,7 +41,7 @@ dir.create(out_fig, recursive = TRUE, showWarnings = FALSE)
 cat("[1/4] Loading GSE39582 pathway scores and survival data...\n")
 
 # Use direct path (workaround for Chinese chars in path)
-scores_basedir <- "E:\\tmp\\output"
+scores_basedir <- "/path/to/\tmp\\output"
 scores_csv <- file.path(scores_basedir, "GSE39582_pathway_scores.csv")
 
 if (!file.exists(scores_csv)) {

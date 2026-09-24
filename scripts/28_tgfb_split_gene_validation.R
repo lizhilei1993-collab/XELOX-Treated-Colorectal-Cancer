@@ -18,8 +18,8 @@
 #
 # Input:
 #   results/tables/pathway_activity/GSE39582_gene_expression.rds
-#   C:/temp/h.all.v2024.1.symbols.gmt
-#   C:/temp/c2.cp.kegg_legacy.v2024.1.symbols.gmt
+#   /tmp/h.all.v2024.1.symbols.gmt
+#   /tmp/c2.cp.kegg_legacy.v2024.1.symbols.gmt
 #   GDCdata/ (TCGA COAD/READ, if available)
 #
 # Output:
@@ -28,7 +28,7 @@
 # ============================================================
 
 Sys.setlocale("LC_ALL", "Chinese (Simplified)_China.936")
-.libPaths(c("C:/Rlibs", .libPaths()))
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
 PROJECT <- "X:/"
 OUT_DIR <- "/tmp/tgfb_deep_dive"
@@ -72,8 +72,8 @@ read_gmt <- function(gmt_file) {
 }
 
 # Try GMT file paths (Script 34 convention)
-gmt_hallmark <- "C:/temp/h.all.v2024.1.symbols.gmt"
-gmt_kegg     <- "C:/temp/c2.cp.kegg_legacy.v2024.1.symbols.gmt"
+gmt_hallmark <- "/tmp/h.all.v2024.1.symbols.gmt"
+gmt_kegg     <- "/tmp/c2.cp.kegg_legacy.v2024.1.symbols.gmt"
 
 if (!file.exists(gmt_hallmark)) {
   gmt_hallmark <- file.path(PROJECT, "data/geo/h.all.v2024.1.symbols.gmt")

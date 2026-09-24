@@ -1,14 +1,14 @@
 
 ## TEMP must be ASCII: the Windows user profile path contains CJK characters,
 ## which breaks HDF5Array::.onLoad (registered in GSVA's namespace).
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 suppressPackageStartupMessages({
   library(survival); library(GSVA); library(GSEABase); library(timeROC)
 })
 options(warn = -1)
-IN  <- "C:/xelox_reanalysis/input"
-OUT <- "C:/xelox_reanalysis/tcga_val"
+IN  <- "/path/to/xelox_reanalysis/input"
+OUT <- "/path/to/xelox_reanalysis/tcga_val"
 dir.create(OUT, showWarnings = FALSE, recursive = TRUE)
 ts <- function() format(Sys.time(), "%H:%M:%S")
 say <- function(...) cat("[", ts(), "] ", paste0(...), "\n", sep = "")
@@ -35,8 +35,8 @@ read_gmt <- function(f) {
     if (length(g)) out[[p[1]]] <- g }
   out
 }
-H <- read_gmt("C:/temp/h.all.v2024.1.symbols.gmt")
-K <- read_gmt("C:/temp/c2.cp.kegg_legacy.v2024.1.symbols.gmt")
+H <- read_gmt("/tmp/h.all.v2024.1.symbols.gmt")
+K <- read_gmt("/tmp/c2.cp.kegg_legacy.v2024.1.symbols.gmt")
 kegg_targets <- c("KEGG_NUCLEOTIDE_EXCISION_REPAIR","KEGG_BASE_EXCISION_REPAIR","KEGG_MISMATCH_REPAIR",
  "KEGG_HOMOLOGOUS_RECOMBINATION","KEGG_P53_SIGNALING_PATHWAY","KEGG_APOPTOSIS","KEGG_CELL_CYCLE",
  "KEGG_ABC_TRANSPORTERS","KEGG_GLUTATHIONE_METABOLISM","KEGG_DRUG_METABOLISM_CYTOCHROME_P450",

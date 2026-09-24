@@ -5,11 +5,11 @@
 # 或在 R 中: source("scripts/setup.R")
 
 # --- 设置 R 库路径 ---
-lib_path <- "C:/Rlibs"
+lib_path <- "/path/to/Rlibs"
 .libPaths(c(lib_path, .libPaths()))
 
 # --- 设置临时目录（避免中文路径问题）---
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
 
 # --- 加载必需包 ---
 required_pkgs <- c(

@@ -134,7 +134,7 @@ print(f"Remaining body elements: {remaining}")
 
 sys.path.insert(0, r"/home/user\.workbuddy\plugins\marketplaces\codebuddy-plugins-official\plugins\docx\scripts\office")
 cmd = [
-    "C:/ProgramData/WorkBuddy/chromium-env/6nqqlh/.workbuddy/binaries/python/envs/default/Scripts/python.exe",
+    "/path/to/cache/chromium-env/6nqqlh/.workbuddy/binaries/python/envs/default/Scripts/python.exe",
     r"/home/user\.workbuddy\plugins\marketplaces\codebuddy-plugins-official\plugins\docx\scripts\office\pack.py",
     UNPACK_DIR,
     DST_DOCX,

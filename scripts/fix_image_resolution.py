@@ -7,7 +7,7 @@ from PIL import Image
 
 BASE_PNG = r'/path/to/xelox_project\results\figures_png'
 OUT_DIR = os.path.join(BASE_PNG, 'hd')  # high-DPI output
-TMP_DIR = r'E:/tmp/output/figures_hd'
+TMP_DIR = r'/tmp/scratch/output/figures_hd'
 TARGET_WIDTH_INCH = 6.5
 TARGET_DPI = 300
 MIN_PIXELS = int(TARGET_WIDTH_INCH * TARGET_DPI)  # 1950
@@ -48,7 +48,7 @@ for f in sorted(os.listdir(BASE_PNG)):
 # Process supplementary figure PDFs -> PNG if possible
 # Check for PDFs that need conversion
 results_fig = r'/path/to/xelox_project\results\figures'
-tmp_output_fig = r'E:/tmp/output/figures'
+tmp_output_fig = r'/tmp/scratch/output/figures'
 
 pdf_to_convert = [
     ('fair_comparison', 'fair_comparison_c_index.pdf'),

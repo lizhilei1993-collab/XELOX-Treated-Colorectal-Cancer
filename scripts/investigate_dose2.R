@@ -1,4 +1,4 @@
-.libPaths(c("C:/Rlibs", .libPaths()))
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 library(DOSE)
 
 cat("=== enrichDO internal dispatch ===\n")

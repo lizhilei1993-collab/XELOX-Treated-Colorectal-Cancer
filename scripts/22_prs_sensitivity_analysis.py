@@ -25,7 +25,7 @@ warnings.filterwarnings('ignore')
 # ============================================================
 # 0. Paths
 # ============================================================
-PROJECT_ROOT = r"/path/to/xelox_project"
+PROJECT_ROOT = r"/path/to/xelox_project基于可解释性机器学习的XELOX耐药分子指纹研究"
 XELOX_WORK = r"C:\xelox_work"
 RESULTS_DIR = os.path.join(XELOX_WORK, "results", "prs_sensitivity")
 os.makedirs(RESULTS_DIR, exist_ok=True)

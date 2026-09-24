@@ -24,8 +24,8 @@
 #   gse72970_calibration.pdf         — calibration plot (if applicable)
 # ============================================================
 
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
 PROJECT_ROOT <- getwd()
 RESULTS_TAB_DIR <- file.path(PROJECT_ROOT, "results", "tables")
@@ -45,7 +45,7 @@ cat("=== [0] Loading packages ===\n\n")
 required_pkgs <- c("survival", "ggplot2", "data.table")
 for (pkg in required_pkgs) {
   if (!requireNamespace(pkg, quietly = TRUE)) {
-    install.packages(pkg, lib = "C:/Rlibs", repos = "https://cloud.r-project.org")
+    install.packages(pkg, lib = "/path/to/Rlibs", repos = "https://cloud.r-project.org")
   }
   suppressPackageStartupMessages(library(pkg, character.only = TRUE))
   cat(sprintf("  %s v%s loaded\n", pkg, packageVersion(pkg)))

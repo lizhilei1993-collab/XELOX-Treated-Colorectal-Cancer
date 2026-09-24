@@ -1,6 +1,6 @@
 library(Biobase)
 cat("Loading eset...\n")
-eset <- readRDS("C:/xelox_research/data/geo/GSE39582_eset.rds")
+eset <- readRDS("/path/to/xelox_project/data/geo/GSE39582_eset.rds")
 cat("Loaded.\n")
 expr <- exprs(eset)
 cat("DIM:", nrow(expr), ncol(expr), "\n")

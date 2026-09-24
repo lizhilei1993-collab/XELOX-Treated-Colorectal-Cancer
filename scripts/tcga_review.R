@@ -1,10 +1,10 @@
 # ============================================================
 # TCGA分析审查：患者分组 + DEGs + 批次效应
 # ============================================================
-Sys.setenv(HOME = "C:/temp", TMPDIR = "C:/temp", R_LIBS = "C:/Rlibs")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(HOME = "/tmp", TMPDIR = "/tmp", R_LIBS = "/path/to/Rlibs")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
-PROJ <- "/path/to/xelox_project"
+PROJ <- "/path/to/xelox_project基于可解释性机器学习的XELOX耐药分子指纹研究"
 
 # ============================================================
 # 任务1: 患者分组审查

@@ -1,5 +1,5 @@
 # Investigate DOSE v4.5.0 internal objects
-.libPaths(c("C:/Rlibs", .libPaths()))
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 library(DOSE)
 library(org.Hs.eg.db)
 library(GO.db)

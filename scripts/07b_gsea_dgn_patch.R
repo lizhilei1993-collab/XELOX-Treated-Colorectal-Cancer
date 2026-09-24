@@ -4,11 +4,11 @@
 # Skips already-completed ORA and GSEA (GO/KEGG) steps.
 # ============================================================
 
-Sys.setenv(HOME = "C:/temp", TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp", R_LIBS = "C:/Rlibs")
+Sys.setenv(HOME = "/tmp", TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp", R_LIBS = "/path/to/Rlibs")
 Sys.setlocale("LC_ALL", "C")
-.libPaths(c("C:/Rlibs", .libPaths()))
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
-PROJECT_ROOT     <- "C:/xelox_research"
+PROJECT_ROOT     <- "/path/to/xelox_project"
 SCRIPT_DIR       <- file.path(PROJECT_ROOT, "scripts")
 RESULTS_TAB_DIR  <- file.path(PROJECT_ROOT, "results", "tables")
 RESULTS_FIG_DIR  <- file.path(PROJECT_ROOT, "results", "figures")

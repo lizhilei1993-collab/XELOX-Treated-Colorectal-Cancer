@@ -6,10 +6,10 @@
 # with B=500 (more stable than 1000) and robust error handling.
 # ============================================================
 
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
-PROJECT_ROOT <- "C:/xelox_research"
+PROJECT_ROOT <- "/path/to/xelox_project"
 DATA_GEO_DIR <- file.path(PROJECT_ROOT, "data", "geo")
 RESULTS_TAB_DIR <- file.path(PROJECT_ROOT, "results", "tables")
 PA_DIR <- file.path(RESULTS_TAB_DIR, "pathway_activity")
@@ -59,8 +59,8 @@ cat(sprintf("  Batches: GSE39582=%d, GSE19860=%d\n",
 # ============================================================
 cat("=== [2] Loading/recomputing ssGSEA ===\n\n")
 
-gmt_h <- "C:/temp/h.all.v2024.1.symbols.gmt"
-gmt_kegg <- "C:/temp/c2.cp.kegg_legacy.v2024.1.symbols.gmt"
+gmt_h <- "/tmp/h.all.v2024.1.symbols.gmt"
+gmt_kegg <- "/tmp/c2.cp.kegg_legacy.v2024.1.symbols.gmt"
 
 read_gmt <- function(gmt_file) {
   lines <- readLines(gmt_file, warn = FALSE)

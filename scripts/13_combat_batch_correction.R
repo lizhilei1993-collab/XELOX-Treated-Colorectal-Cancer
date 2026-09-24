@@ -20,12 +20,12 @@
 #   tables/batch_correction/stable_fingerprint_genes.csv     (filtered gene list)
 # ============================================================
 
-Sys.setenv(TMPDIR = "C:/temp", TMP = "C:/temp", TEMP = "C:/temp")
-.libPaths(c("C:/Rlibs", .libPaths()))
+Sys.setenv(TMPDIR = "/tmp", TMP = "/tmp", TEMP = "/tmp")
+.libPaths(c("/path/to/Rlibs", .libPaths()))
 
 # Accept PROJECT_ROOT from environment variable
 PROJECT_ROOT <- Sys.getenv("XELOX_ROOT",
-  "C:/xelox_research")
+  "/path/to/xelox_project")
 
 # Set locale
 if (.Platform$OS.type == "windows") {
